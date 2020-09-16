@@ -1,5 +1,3 @@
-import org.junit.Test;
-
 import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
@@ -71,7 +69,7 @@ class FixedPointListControllerTest {
         correctOutputs.add("Normal termination of program1.");
 
 
-        FixedPointListController fpl = new FixedPointListController();
+        FixedPointListCommandLineInterface fpl = new FixedPointListCommandLineInterface();
         for (int i = 0; i < commands.size(); i++) {
 
             String command = commands.get(i);
@@ -80,6 +78,7 @@ class FixedPointListControllerTest {
 
             String output = correctOutputs.get(i);
             assertEquals(output, actualOutput);
+            System.out.println("Passed Test for Command:    " + command + " yeilding output:     " + actualOutput);
 
         }
 

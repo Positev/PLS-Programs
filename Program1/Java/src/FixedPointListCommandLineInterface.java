@@ -1,17 +1,39 @@
 import java.util.Scanner;
 
-public class FixedPointListController {
+/**
+ * The requirements for Program 1 force the Fixed point list to violate the single responsibility principal. So i
+ * decided to separate the responsibility of handing user input to this class. This class is used to interact with
+ * the user via keyboard and console. It is also used for testing via FixedPointControllerTest.
+ *
+ * @author Trevor Keegan
+ * @date 9/16/2020
+ * */
+public class FixedPointListCommandLineInterface {
     FixedPointList fixedPointList;
-    public FixedPointListController(){
+
+
+    /**
+     * Construct a new instance and initialize the Fixed Point List to be used.
+     *
+     * */
+    public FixedPointListCommandLineInterface(){
         fixedPointList = new FixedPointList();
-
-
     }
+
+    /**
+     * Run this to begin command line interaction with user
+     *
+     * */
     public static void main(String[] args) {
-        FixedPointListController controller = new FixedPointListController();
+        FixedPointListCommandLineInterface controller = new FixedPointListCommandLineInterface();
         controller.run();
     }
 
+    /**
+     * This function enters into a loop with the user via keyboard and console to
+     * allow them to execute commands.
+     *
+     * */
     public void run(){
         String response;
         Scanner scanner = new Scanner(System.in);
@@ -26,7 +48,8 @@ public class FixedPointListController {
 
     /**
      * Handle raw line from keyboard. Will remove carriage return before passing
-     * to other handlers.
+     * to other handlers. Will also parse args and command from line is single space
+     * between them.
      *
      * @param line - Raw input from keyboard. -> scanner.readLine()
      * @return Response from system to display to user
@@ -47,7 +70,16 @@ public class FixedPointListController {
         }
     }
 
-
+    /**
+     * Handle parsed command from execute function. Specifically commands
+     * that do not include an arguement as provided from input to execute.
+     *
+     * If trying to use command that requires arg with no args, error message will be displayed to user.
+     *
+     * @param command - parsed command. Valid entries are ["P", "S", "X"] or lower case equivalent,
+     * All other entries will return an error message
+     * @return Response from system to display to user
+     * */
     private String handleCommand(String command){
         switch (command.toLowerCase()) {
             case "a" -> {
@@ -77,6 +109,16 @@ public class FixedPointListController {
 
     }
 
+    /**
+     * Handle parsed command from execute function. Specifically commands
+     * that do include an argument as provided from input to execute.
+     *
+     * If using command that does not require arg with an arg, it is ignored and
+     * handle command designed for no args will be deferred to.
+     *
+     * @param command - Raw input from keyboard. -> scanner.readLine()
+     * @return Response from system to display to user
+     * */
     private String handleCommand(String command, String arg){
 
         switch (command.toLowerCase()) {
