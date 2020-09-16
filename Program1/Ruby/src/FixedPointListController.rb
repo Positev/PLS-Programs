@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require './FixedPointList'
 
 class FixedPointListController
@@ -23,72 +25,71 @@ class FixedPointListController
   def execute(command)
     has_arg = command.match(/\s/)
 
-    if(has_arg)
+    if has_arg
       split_command = command.split(' ')
       command = split_command[0]
-      response = handle_command(command, split_command[1] )
+      response = handle_command(command, split_command[1])
     else
       response = handle_command(command)
     end
 
-    return response
+    response
   end
 
   def handle_command(command, arg = nil)
-
     command_lower = command.downcase
     if command_lower == 'a'
-      return handle_add(arg)
+      handle_add(arg)
     elsif command_lower == 'q'
-      return handle_q_change(arg)
+      handle_q_change(arg)
     elsif command_lower == 'd'
-      return handle_delete(arg)
+      handle_delete(arg)
     elsif command_lower == 'p'
-      entries = "#{@num_list.to_s}"
-      if entries != ""
-        return "All fixed-point numbers in the list are:\n#{entries}"
-      end
-      return "All fixed-point numbers in the list are:"
+      entries = @num_list.to_s.to_s
+      return "All fixed-point numbers in the list are:\n#{entries}" if entries != ''
+
+      'All fixed-point numbers in the list are:'
     elsif command_lower == 's'
-      return "The sum is #{@num_list.sum_all}."
+      "The sum is #{@num_list.sum}."
     elsif command_lower == 'x'
-      return "Normal termination of program1."
+      'Normal termination of program1.'
     else
-      return"#{command} is not a valid command!"
+      "#{command} is not a valid command!"
     end
   end
 
   def handle_add(arg)
-    if(arg != nil)
+    if !arg.nil?
       new_fixed_point = FixedPointNumber.new(arg.to_f, @num_list.current_q)
       @num_list.add(new_fixed_point)
-      return "#{new_fixed_point.to_s} was added to the list."
+      "#{new_fixed_point} was added to the list."
     else
-      return "Arg missing. You must specify the number to append to the list"
+      'Arg missing. You must specify the number to append to the list'
     end
   end
 
   def handle_q_change(arg)
-    if(arg != nil)
+    if !arg.nil?
       @num_list.current_q = arg.to_i
-      return "Current q_value was changed to #{@num_list.current_q}."
+      "Current q_value was changed to #{@num_list.current_q}."
     else
-      return "Arg missing. You must specify the new q value"
+      'Arg missing. You must specify the new q value'
     end
   end
 
   def handle_delete(arg)
-    if(arg != nil)
+    if !arg.nil?
       new_fixed_point = FixedPointNumber.new(arg.to_f, @num_list.current_q)
       result = @num_list.delete(new_fixed_point)
       if result
-        return "#{new_fixed_point.to_s} was deleted from the list."
+        "#{new_fixed_point} was deleted from the list."
       else
-        return "No value equal to #{new_fixed_point.to_s} in the list."
+        "No value equal to #{new_fixed_point} in the list."
       end
     else
-      return "Arg missing. You must specify the number to append to the list"
+      'Arg missing. You must specify the number to append to the list'
     end
   end
 
+  private :handle_command, :handle_add, :handle_delete, :handle_q_change
 end

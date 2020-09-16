@@ -14,7 +14,7 @@ public class FixedPointNumber {
     }
 
     public double toDouble(){
-        return (double)this.intVal / Math.pow(2, this.qVal);
+        return (double) this.intVal / Math.pow(2, this.qVal);
 
     }
 
@@ -23,7 +23,8 @@ public class FixedPointNumber {
         int newIntVal;
         if(qDiff > 0){
             newIntVal = this.intVal << Math.abs(qDiff);
-        }else{
+        }
+        else {
             newIntVal = this.intVal >> Math.abs(qDiff);
         }
 
@@ -32,12 +33,14 @@ public class FixedPointNumber {
 
     @Override
     public String toString(){
-        //TODO
         return String.format("%d, %d: %.6f",intVal, qVal, toDouble());
     }
 
     public boolean equals(Object p){
-        FixedPointNumber num = (FixedPointNumber)p;
+        if(p.getClass() != this.getClass()){
+            return false;
+        }
+        FixedPointNumber num = (FixedPointNumber )p;
         return this.intVal == num.intVal && this.qVal == num.qVal;
     }
 

@@ -1,14 +1,18 @@
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.util.ArrayList;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.assertEquals;
 
-class FixedPointListTest {
+class FixedPointListControllerTest {
 
-    @Test
-    void testRunTimeCommands() {
-        ArrayList<String> commands = new ArrayList<String>();
+    public static void main(String[] args) {
+        testRunTimeCommands();
+    }
+
+    public static void testRunTimeCommands() {
+
+        ArrayList<String> commands = new ArrayList<>();
         commands.add("P");
         commands.add("S");
         commands.add("Q 9");
@@ -37,7 +41,7 @@ class FixedPointListTest {
         commands.add("C 3.520");
         commands.add("X");
 
-        ArrayList<String> correctOutputs = new ArrayList<String>();
+        ArrayList<String> correctOutputs = new ArrayList<>();
         correctOutputs.add("All fixed-point numbers in the list are:");
         correctOutputs.add("The sum is 0, 12: 0.000000.");
         correctOutputs.add("Current q_value was changed to 9.");
@@ -47,7 +51,7 @@ class FixedPointListTest {
         correctOutputs.add("16174284, 17: 123.399994 was added to the list.");
         correctOutputs.add("All fixed-point numbers in the list are:\n63211, 9: 123.458984\n63226, 9: 123.488281\n16174284, 17: 123.399994");
         correctOutputs.add("The sum is 48542156, 17: 370.347260.");
-        correctOutputs.add("No value equal to 16182149, 17: 123.459999 in the list.") ;
+        correctOutputs.add("No value equal to 16182149, 17: 123.459999 in the list.");
         correctOutputs.add("Current q_value was changed to 9.");
         correctOutputs.add("63226, 9: 123.488281 was added to the list.");
         correctOutputs.add("All fixed-point numbers in the list are:\n63211, 9: 123.458984\n63226, 9: 123.488281\n16174284, 17: 123.399994\n63226, 9: 123.488281");
@@ -67,22 +71,18 @@ class FixedPointListTest {
         correctOutputs.add("Normal termination of program1.");
 
 
-
-        FixedPointList fpl = new FixedPointList();
+        FixedPointListController fpl = new FixedPointListController();
         for (int i = 0; i < commands.size(); i++) {
 
             String command = commands.get(i);
 
-            String actualOutput = fpl.keyboardCommand(command);
+            String actualOutput = fpl.execute(command);
 
             String output = correctOutputs.get(i);
-            assertEquals( output, actualOutput, String.format("Command: %s", command));
+            assertEquals(output, actualOutput);
 
         }
 
 
-
-
     }
-
 }
