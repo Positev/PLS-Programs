@@ -6,14 +6,14 @@ class FixedPointNumber
     @q_val = q
     if val.is_a?(Integer)
       @int_val = val
-    elsif val.is_a?()
-    @int_val = val * 2 ** q_val
+    else
+      @int_val = (val * 2.0 ** q_val).to_i
     end
 
   end
 
   def to_double
-    return int_val / 2 ** q_val
+    return (int_val.to_f / 2 ** q_val).to_f
   end
 
   def to_q_val(q)
@@ -24,7 +24,7 @@ class FixedPointNumber
       new_int_val = @int_val >> q_diff.abs()
     end
 
-    return FixedPointNumber(new_int_val, q_diff)
+    return FixedPointNumber.new(new_int_val, q_diff)
   end
 
 
@@ -34,13 +34,13 @@ class FixedPointNumber
   end
 
   def ==(other_number)
-    return @int_val == other_number.intVal and @q_val == other_number.q_val
+    @int_val == other_number.int_val and @q_val == other_number.q_val
   end
 
-  def sum(other_number, q_val)
+  def plus(other_number, q_val)
     converted_this = to_q_val(q_val)
     converted_other = other_number.to_q_val(q_val)
-    return FixedPointNumber(converted_other.int_val + converted_this.int_val, q_val)
+    return FixedPointNumber.new(converted_other.int_val + converted_this.int_val, q_val)
   end
 
 end

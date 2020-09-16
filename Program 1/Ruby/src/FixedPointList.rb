@@ -1,5 +1,6 @@
+require './FixedPointNumber'
 class FixedPointList
-  attr_accessor nums current_q
+  attr_accessor :nums, :current_q
 
   def initialize
     super
@@ -10,6 +11,7 @@ class FixedPointList
     @current_q = new_q_value
   end
 
+
   def add(fixed_point_num)
     @nums.push(fixed_point_num)
   end
@@ -18,12 +20,14 @@ class FixedPointList
     @nums.each { |num|
       if num == fixed_point_num
         @nums.delete(num)
+        return true
       end
     }
+    return false
   end
 
   def sum_all
-    summed = FixedPointNumber(0,@current_q)
+    summed = FixedPointNumber.new(0,@current_q)
     @nums.each { |num|
       summed = summed.plus(num, @current_q)
     }
@@ -31,8 +35,13 @@ class FixedPointList
   end
 
   def to_s
-    @nums.each { |num|
-      puts num.to_s
-    }
+    if @nums.empty?
+      return ""
+    end
+
+    out = @nums.join("\n")
+    return out
   end
 end
+
+
