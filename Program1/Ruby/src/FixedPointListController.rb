@@ -35,22 +35,23 @@ class FixedPointListController
   end
 
   def handle_command(command, arg = nil)
-    command = command.downcase
-    if command == 'a'
+
+    command_lower = command.downcase
+    if command_lower == 'a'
       return handle_add(arg)
-    elsif command == 'q'
+    elsif command_lower == 'q'
       return handle_q_change(arg)
-    elsif command == 'd'
+    elsif command_lower == 'd'
       return handle_delete(arg)
-    elsif command == 'p'
+    elsif command_lower == 'p'
       entries = "#{@num_list.to_s}"
       if entries != ""
         return "All fixed-point numbers in the list are:\n#{entries}"
       end
       return "All fixed-point numbers in the list are:"
-    elsif command == 's'
+    elsif command_lower == 's'
       return "The sum is #{@num_list.sum_all}."
-    elsif command == 'x'
+    elsif command_lower == 'x'
       return "Normal termination of program1."
     else
       return"#{command} is not a valid command!"

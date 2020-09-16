@@ -17,13 +17,13 @@ class FixedPointList
   end
 
   def delete(fixed_point_num)
-    @nums.each { |num|
-      if num == fixed_point_num
-        @nums.delete(num)
+    (0...@nums.size).each do |i|
+      if(@nums[i] == fixed_point_num)
+        @nums.delete_at(i)
         return true
       end
-    }
-    return false
+    end
+     false
   end
 
   def sum_all

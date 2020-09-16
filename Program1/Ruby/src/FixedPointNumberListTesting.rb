@@ -66,6 +66,11 @@ correct_outputs.push("Normal termination of program1.")
 puts "Running tests"
 
 (0...commands.size).each { |i|
-  assert_equal(fplc.execute(commands[i]), correct_outputs[i])
+  puts commands[i]
+  response = fplc.execute(commands[i])
+  puts response
+  out = correct_outputs[i]
+  out = correct_outputs[i]
+  assert_equal(response, out )
 }
 puts "Done"

@@ -13,7 +13,7 @@ class FixedPointNumber
   end
 
   def to_double
-    return (int_val.to_f / 2 ** q_val).to_f
+    return (int_val.to_f / 2.0 ** q_val).to_f
   end
 
   def to_q_val(q)
@@ -34,7 +34,7 @@ class FixedPointNumber
   end
 
   def ==(other_number)
-    @int_val == other_number.int_val and @q_val == other_number.q_val
+    return @int_val == other_number.int_val && @q_val == other_number.q_val
   end
 
   def plus(other_number, q_val)
