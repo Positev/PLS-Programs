@@ -1,6 +1,6 @@
 require "test/unit/assertions"
 
-require '../src/FixedPointListController'
+require '../src/fixed_point_controller'
 include Test::Unit::Assertions
 
 fplc = FixedPointListController.new()

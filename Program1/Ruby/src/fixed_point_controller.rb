@@ -1,15 +1,23 @@
 # frozen_string_literal: true
 
-require './FixedPointList'
+require './fixed_point_list'
+
+
+# The fixed point number list manages a list of fixed point numbers by providing add, delete, and summation
+#   capabilities.
+# Author: Trevor Keegan
+# Date: 9/16/2020
 
 class FixedPointListController
   attr_accessor :num_list
 
+  # initialize FixedPointListController with new FixedPointList for num list
   def initialize
     super
     @num_list = FixedPointList.new
   end
 
+  # run command line interaction loop for interaction with user over console and keyboard
   def run
     continue = true
     while continue
@@ -22,6 +30,9 @@ class FixedPointListController
     end
   end
 
+  # Execute given command by parsing and extracting args if available and passing to handlers
+  # @param [String] command Must be one of ["P", "S", "X", "A &args", "D &args", "Q &args"]
+  #                 such that &args is a double for A and D and an integer for Q
   def execute(command)
     has_arg = command.match(/\s/)
 
@@ -36,6 +47,9 @@ class FixedPointListController
     response
   end
 
+  # Handle command and generate correct response after inteacting with the num_list
+  # @param [String] command - command to execute  
+  # @param [Numeric] arg - arg for command
   def handle_command(command, arg = nil)
     command_lower = command.downcase
     if command_lower == 'a'
@@ -58,6 +72,7 @@ class FixedPointListController
     end
   end
 
+  # Handle adding new fixed point number to list. Add must be either double or integer
   def handle_add(arg)
     if !arg.nil?
       new_fixed_point = FixedPointNumber.new(arg.to_f, @num_list.current_q)
@@ -68,6 +83,7 @@ class FixedPointListController
     end
   end
 
+  # Handle cahng
   def handle_q_change(arg)
     if !arg.nil?
       @num_list.current_q = arg.to_i
