@@ -82,26 +82,27 @@ public class FixedPointListCommandLineInterface {
      * */
     private String handleCommand(String command){
         switch (command.toLowerCase()) {
-            case "a" -> {
+            case "a": {
                 return "Arg missing. You must specify the number to delete from the list";
+
             }
-            case "q" -> {
+            case "q" : {
                 return "Arg missing. You must specify the new q value";
             }
-            case "d" -> {
+            case "d" : {
                 return "Arg missing. You must specify the number to append to the list";
             }
-            case "p" -> {
+            case "p" : {
                 return "All fixed-point numbers in the list are:" + fixedPointList.toString();
 
             }
-            case "s" -> {
+            case "s" : {
                 return "The sum is " + fixedPointList.sumAll().toString() + ".";
             }
-            case "x" -> {
+            case "x" : {
                 return "Normal termination of program1.";
             }
-            default -> {
+            default: {
                 return command + " is not a valid command!";
             }
         }
@@ -122,14 +123,14 @@ public class FixedPointListCommandLineInterface {
     private String handleCommand(String command, String arg){
 
         switch (command.toLowerCase()) {
-            case "a" -> {
+            case "a" : {
 
                 double dArg = Double.parseDouble(arg);
                 FixedPointNumber num = new FixedPointNumber(dArg, fixedPointList.getCurrentQValue());
                 fixedPointList.add(num);
                 return num.toString() + " was added to the list.";
             }
-            case "d" -> {
+            case "d" :{
 
                 double dArg = Double.parseDouble(arg);
                 FixedPointNumber num = new FixedPointNumber(dArg, fixedPointList.getCurrentQValue());
@@ -141,15 +142,17 @@ public class FixedPointListCommandLineInterface {
                     return "No value equal to " + num.toString() + " in the list.";
                 }
             }
-            case "q" -> {
+            case "q" : {
                 int newQ = Integer.parseInt(arg);
                 fixedPointList.setCurrentQValue(newQ);
                 return "Current q_value was changed to " + fixedPointList.getCurrentQValue() + ".";
             }
-            case "p", "s", "x" -> {
+            case "p":
+            case "s":
+                case "x" : {
                 return handleCommand(command);
             }
-            default -> {
+            default : {
                 return command + " is not a valid command!";
             }
         }

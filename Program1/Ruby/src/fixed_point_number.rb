@@ -34,7 +34,7 @@ class FixedPointNumber
   # @param [Integer] q value to use for this fixed point number
   def to_q_val(q)
     q_diff = q - @q_val
-    new_int_val = if q_diff.positive?
+    new_int_val = if q_diff > 0
                     @int_val << q_diff.abs
                   else
                     @int_val >> q_diff.abs
