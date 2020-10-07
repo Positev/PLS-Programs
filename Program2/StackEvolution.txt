@@ -1,0 +1,57 @@
+There are 7 nonterminal symbols.
+There are 13 rules in the CFG that follows.
+
+program -> statements
+statements -> singleStatement ;
+statements -> singleStatement ; statements
+singleStatement -> variable = expression
+expression -> term
+expression -> term + expression
+expression -> term - expression
+term -> factor
+term -> factor * term
+term -> factor / term
+factor -> variable
+factor -> const
+variable -> a
+
+Sentences of length 5 or less are:
+
+a = const ;
+a = a ;
+
+
+
+Stack Evolution:
+
+
+["program"]
+["statements"]
+["singleStatement ;", "singleStatement ; statements"]
+["singleStatement ;", "variable = expression ; statements"]
+["singleStatement ;", "a = expression ; statements"]
+["singleStatement ;", "a = term ; statements", "a = term + expression ; statements", "a = term - expression ; statements"]
+["singleStatement ;", "a = term ; statements", "a = term + expression ; statements"]
+["singleStatement ;", "a = term ; statements"]
+["singleStatement ;", "a = factor ; statements", "a = factor * term ; statements", "a = factor / term ; statements"]
+["singleStatement ;", "a = factor ; statements", "a = factor * term ; statements"]
+["singleStatement ;", "a = factor ; statements"]
+["singleStatement ;", "a = variable ; statements", "a = const ; statements"]
+["singleStatement ;", "a = variable ; statements", "a = const ; singleStatement ;", "a = const ; singleStatement ; statements"]
+["singleStatement ;", "a = variable ; statements", "a = const ; singleStatement ;"]
+["singleStatement ;", "a = variable ; statements"]
+["singleStatement ;", "a = a ; statements"]
+["singleStatement ;", "a = a ; singleStatement ;", "a = a ; singleStatement ; statements"]
+["singleStatement ;", "a = a ; singleStatement ;"]
+["singleStatement ;"]
+["variable = expression ;"]
+["a = expression ;"]
+["a = term ;", "a = term + expression ;", "a = term - expression ;"]
+["a = term ;", "a = term + expression ;"]
+["a = term ;"]
+["a = factor ;", "a = factor * term ;", "a = factor / term ;"]
+["a = factor ;", "a = factor * term ;"]
+["a = factor ;"]
+["a = variable ;", "a = const ;"]
+["a = variable ;"]
+["a = a ;"]

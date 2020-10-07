@@ -1,0 +1,15 @@
+program -> statements
+statements -> singleStatement ;
+statements -> singleStatement ; statements
+singleStatement -> variable = expression
+expression -> term
+expression -> term + expression
+expression -> term - expression
+term -> factor
+term -> factor * term
+term -> factor / term
+factor -> variable
+factor -> const
+variable -> a
+
+6
