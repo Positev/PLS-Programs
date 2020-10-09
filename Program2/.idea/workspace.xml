@@ -1,22 +1,120 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="bb8e70ba-a7fa-4e69-9808-e9443d3f75c5" name="Default Changelist" comment="" />
+    <list default="true" id="bb8e70ba-a7fa-4e69-9808-e9443d3f75c5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Program2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Program2.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cf_grammer.rb" beforeDir="false" afterPath="$PROJECT_DIR$/cf_grammer.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prog2.rb" beforeDir="false" afterPath="$PROJECT_DIR$/prog2.rb" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="ProjectId" id="1iWhTdkzwamC2snUtfIalUUk7xg" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.editor" />
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="ruby cf_grammer.rb" />
+    </option>
+  </component>
+  <component name="RunManager" selected="Ruby.cf_grammer">
+    <configuration name="cf_grammer" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
+      <module name="Program2" />
+      <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$MODULE_DIR$" />
+      <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="ruby-2.7.2-p137" />
+      <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" />
+      <EXTENSION ID="org.jetbrains.plugins.ruby.rails.run.RailsRunConfigurationExtension" SCRATCH_USE_RAILS_RUNNER="false" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/cf_grammer.rb" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="prog2" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
+      <module name="Program2" />
+      <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$MODULE_DIR$" />
+      <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/prog2.rb" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ruby cf_grammer.rb" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
+      <module name="Program2" />
+      <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$MODULE_DIR$" />
+      <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/cf_grammer.rb" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Ruby.cf_grammer" />
+      <item itemvalue="Ruby.ruby cf_grammer.rb" />
+      <item itemvalue="Ruby.prog2" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Ruby.cf_grammer" />
+        <item itemvalue="Ruby.prog2" />
+        <item itemvalue="Ruby.ruby cf_grammer.rb" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpringUtil" SPRING_PRE_LOADER_OPTION="true" RAKE_SPRING_PRE_LOADER_OPTION="true" RAILS_SPRING_PRE_LOADER_OPTION="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="bb8e70ba-a7fa-4e69-9808-e9443d3f75c5" name="Default Changelist" comment="" />
@@ -25,10 +123,145 @@
       <option name="presentableId" value="Default" />
       <updated>1602029265572</updated>
       <workItem from="1602029267179" duration="18000" />
+      <workItem from="1602251715373" duration="4089000" />
+      <workItem from="1602262049069" duration="155000" />
+      <workItem from="1602262374419" duration="711000" />
+      <workItem from="1602263106214" duration="14101000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1763" y="325" width="1092" height="738" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602263167553">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="1763" y="325" width="1092" height="738" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.3440.1400/3440.0.2560.1400@0.0.3440.1400" timestamp="1602263167553" />
+    <state width="481" height="466" key="DebuggerActiveHint" timestamp="1602276379023">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="481" height="466" key="DebuggerActiveHint/0.0.3440.1400/3440.0.2560.1400@0.0.3440.1400" timestamp="1602276379023" />
+    <state x="3966" y="444" key="FileChooserDialogImpl" timestamp="1602262408356">
+      <screen x="3440" y="0" width="2560" height="1400" />
+    </state>
+    <state x="3966" y="444" key="FileChooserDialogImpl/0.0.3440.1400/3440.0.2560.1400@3440.0.2560.1400" timestamp="1602262408356" />
+    <state width="1396" height="1097" key="GridCell.Tab.0.bottom" timestamp="1602278743601">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="1396" height="1097" key="GridCell.Tab.0.bottom/0.0.3440.1400/3440.0.2560.1400@0.0.3440.1400" timestamp="1602278743601" />
+    <state width="2517" height="320" key="GridCell.Tab.0.bottom/0.0.3440.1400/3440.0.2560.1400@3440.0.2560.1400" timestamp="1602262204845" />
+    <state width="1396" height="1097" key="GridCell.Tab.0.center" timestamp="1602278743601">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="1396" height="1097" key="GridCell.Tab.0.center/0.0.3440.1400/3440.0.2560.1400@0.0.3440.1400" timestamp="1602278743601" />
+    <state width="2517" height="320" key="GridCell.Tab.0.center/0.0.3440.1400/3440.0.2560.1400@3440.0.2560.1400" timestamp="1602262204845" />
+    <state width="1396" height="1097" key="GridCell.Tab.0.left" timestamp="1602278743601">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="1396" height="1097" key="GridCell.Tab.0.left/0.0.3440.1400/3440.0.2560.1400@0.0.3440.1400" timestamp="1602278743601" />
+    <state width="2517" height="320" key="GridCell.Tab.0.left/0.0.3440.1400/3440.0.2560.1400@3440.0.2560.1400" timestamp="1602262204845" />
+    <state width="1396" height="1097" key="GridCell.Tab.0.right" timestamp="1602278743601">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="1396" height="1097" key="GridCell.Tab.0.right/0.0.3440.1400/3440.0.2560.1400@0.0.3440.1400" timestamp="1602278743601" />
+    <state width="2517" height="320" key="GridCell.Tab.0.right/0.0.3440.1400/3440.0.2560.1400@3440.0.2560.1400" timestamp="1602262204845" />
+    <state width="1396" height="1097" key="GridCell.Tab.1.bottom" timestamp="1602278744048">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="1396" height="1097" key="GridCell.Tab.1.bottom/0.0.3440.1400/3440.0.2560.1400@0.0.3440.1400" timestamp="1602278744048" />
+    <state width="2517" height="320" key="GridCell.Tab.1.bottom/0.0.3440.1400/3440.0.2560.1400@3440.0.2560.1400" timestamp="1602262204845" />
+    <state width="1396" height="1097" key="GridCell.Tab.1.center" timestamp="1602278744048">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="1396" height="1097" key="GridCell.Tab.1.center/0.0.3440.1400/3440.0.2560.1400@0.0.3440.1400" timestamp="1602278744048" />
+    <state width="2517" height="320" key="GridCell.Tab.1.center/0.0.3440.1400/3440.0.2560.1400@3440.0.2560.1400" timestamp="1602262204845" />
+    <state width="1396" height="1097" key="GridCell.Tab.1.left" timestamp="1602278744048">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="1396" height="1097" key="GridCell.Tab.1.left/0.0.3440.1400/3440.0.2560.1400@0.0.3440.1400" timestamp="1602278744048" />
+    <state width="2517" height="320" key="GridCell.Tab.1.left/0.0.3440.1400/3440.0.2560.1400@3440.0.2560.1400" timestamp="1602262204845" />
+    <state width="1396" height="1097" key="GridCell.Tab.1.right" timestamp="1602278744048">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="1396" height="1097" key="GridCell.Tab.1.right/0.0.3440.1400/3440.0.2560.1400@0.0.3440.1400" timestamp="1602278744048" />
+    <state width="2517" height="320" key="GridCell.Tab.1.right/0.0.3440.1400/3440.0.2560.1400@3440.0.2560.1400" timestamp="1602262204845" />
+    <state x="2081" y="345" key="SettingsEditor" timestamp="1602268041940">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="2081" y="345" key="SettingsEditor/0.0.3440.1400/3440.0.2560.1400@0.0.3440.1400" timestamp="1602268041940" />
+    <state x="3687" y="334" key="SettingsEditor/0.0.3440.1400/3440.0.2560.1400@3440.0.2560.1400" timestamp="1602262883560" />
+    <state x="2236" y="332" width="672" height="677" key="run.anything.popup" timestamp="1602263758306">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="2236" y="332" width="672" height="677" key="run.anything.popup/0.0.3440.1400/3440.0.2560.1400@0.0.3440.1400" timestamp="1602263758306" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="ruby-line">
+          <url>file://$PROJECT_DIR$/prog2.rb</url>
+          <line>12</line>
+          <properties myBlockOrdinal="-1">
+            <option name="block-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="ruby-line">
+          <url>file://$PROJECT_DIR$/prog2.rb</url>
+          <line>6</line>
+          <properties myBlockOrdinal="-1">
+            <option name="block-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="ruby-line">
+          <url>file://$PROJECT_DIR$/cf_grammer.rb</url>
+          <line>29</line>
+          <properties myBlockOrdinal="-1">
+            <option name="block-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="ruby-line">
+          <url>file://$PROJECT_DIR$/cf_grammer.rb</url>
+          <line>32</line>
+          <properties myBlockOrdinal="-1">
+            <option name="block-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="ruby-line">
+          <url>file://$PROJECT_DIR$/cf_grammer.rb</url>
+          <line>56</line>
+          <properties myBlockOrdinal="-1">
+            <option name="block-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="RubyRunConfigurationType">
+        <watch expression="stack[3]" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Program2@ruby_cf_grammer_rb.rcov" NAME="ruby cf_grammer.rb Coverage Results" MODIFIED="1602263759299" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Program2" />
+    <SUITE FILE_PATH="coverage/Program2@cf_grammer.rcov" NAME="cf_grammer Coverage Results" MODIFIED="1602278743511" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Program2" />
+    <SUITE FILE_PATH="coverage/Program2@prog2.rcov" NAME="prog2 Coverage Results" MODIFIED="1602264288033" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Program2" />
   </component>
 </project>

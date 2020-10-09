@@ -4,7 +4,7 @@
 
 # Author:: Joshua Yue
 
-require_relative "context_free_grammar"
+require_relative 'cf_grammer.rb'
 # Uncomment this line for debugging. Must place prog2.in with desired input
 # in the same folder as context_free_grammar.rb.
 #$stdin.reopen("prog2.in")
@@ -12,5 +12,4 @@ require_relative "context_free_grammar"
 
 cfg = CFGrammar.new
 cfg.read_rules
-cfg.print
 cfg.run
