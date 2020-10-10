@@ -8,13 +8,30 @@ class CFGrammar
     @nonterminals = Array.new
   end
 
+  def run
+    @cfg_rules.each do |rule|
+      read_rule(rule)
+    end
+
+    key_count = @hash_words.keys.length
+    puts "There are #{key_count} nonterminal symbols."
+    rule_count = @cfg_rules.length
+    puts "There are #{rule_count} rules in the CFG that follows."
+    puts
+    puts @cfg_rules
+    puts
+    puts "Sentences of length #{@max_len} or less are:"
+    puts
+    puts generate_sentences
+  end
+
   def generate_sentences
     sentences = []
     stack = []
     stack.push(@hash_words.values[0][0].join(' '))
     while stack.length.positive? #while stack not empty
       rule = stack.pop #pop element off stack
-      next unless rule.split(' ').length <= @max_len && rule != nil
+      next unless rule.split(' ').length <= @max_len && !rule.nil?
 
       sentences.push(rule) if is_sentence(rule)
       generate_rule_permeutations(rule).each do |perm|
@@ -73,16 +90,8 @@ class CFGrammar
 
       replacements = @hash_words[split_rule[replace_index]]
       replacements.each do |replacement|
-        replacement_index = replace_index
         rule_copy = split_rule.dup
-        replacement.each do |element|
-          if replacement_index == replace_index
-            rule_copy[replace_index] = element
-          else
-            rule_copy.insert(replacement_index, element)
-          end
-          replacement_index += 1
-        end
+        replace_one_with_many(replacement, rule_copy, replace_index)
         joined_rule = rule_copy.dup.join(' ')
         generated_permutations.push(joined_rule)
       end
@@ -90,8 +99,20 @@ class CFGrammar
     generated_permutations
   end
 
+  def replace_one_with_many(repl, existing, index)
+
+    replacement_index = index
+    repl.each do |element|
+      if replacement_index == index
+        existing[index] = element
+      else
+        existing.insert(replacement_index, element)
+      end
+      replacement_index += 1
+    end
+  end
+
   def read_rule(rule)
-    @cfg_rules.push(rule)
     arr = rule.split(' -> ')
     rule_name = arr[0]
     rule_value = arr[1].split(' ')
@@ -101,33 +122,15 @@ class CFGrammar
   end
 
   def read_rules
-
-    blank_lines = 0
+    read_len = false
     while (line = gets)
       line.chomp!
       if line == ''
-        if blank_lines == 1 && @max_len.zero?
-          line = gets
-          @max_len = line.chomp!.to_i
-          break
+        read_len ? return : read_len = true
+      else
+        read_len ? @max_len = line.to_i : @cfg_rules.push(line)
         end
-        blank_lines += 1
-      else
-        read_rule(line)
-      end
-      break if blank_lines == 2
-    end
-
-    while(line = gets)
-      line.chomp!
-      blank_lines 
-      if line == ''
-
-      else
-
       end
     end
-
   end
-end
 

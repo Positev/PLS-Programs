@@ -23,9 +23,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bb8e70ba-a7fa-4e69-9808-e9443d3f75c5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/cf_grammer_testing.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cg_grammer_unittesting.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Program2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Program2.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cf_grammer.rb" beforeDir="false" afterPath="$PROJECT_DIR$/cf_grammer.rb" afterDir="false" />
     </list>
@@ -165,7 +162,8 @@
       <workItem from="1602251715373" duration="4089000" />
       <workItem from="1602262049069" duration="155000" />
       <workItem from="1602262374419" duration="711000" />
-      <workItem from="1602263106214" duration="25153000" />
+      <workItem from="1602263106214" duration="25510000" />
+      <workItem from="1602301887162" duration="4180000" />
     </task>
     <task id="LOCAL-00001" summary="Started program 2">
       <created>1602280648721</created>
@@ -201,54 +199,54 @@
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
     <state x="1763" y="325" width="1092" height="738" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.3440.1400/3440.0.2560.1400@0.0.3440.1400" timestamp="1602263167553" />
-    <state width="537" height="466" key="DebuggerActiveHint" timestamp="1602290518660">
+    <state width="537" height="466" key="DebuggerActiveHint" timestamp="1602306204071">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state width="537" height="466" key="DebuggerActiveHint/0.0.3440.1400/3440.0.2560.1400@0.0.3440.1400" timestamp="1602290518660" />
+    <state width="537" height="466" key="DebuggerActiveHint/0.0.3440.1400/3440.0.2560.1400@0.0.3440.1400" timestamp="1602306204071" />
     <state x="3966" y="444" key="FileChooserDialogImpl" timestamp="1602262408356">
       <screen x="3440" y="0" width="2560" height="1400" />
     </state>
     <state x="3966" y="444" key="FileChooserDialogImpl/0.0.3440.1400/3440.0.2560.1400@3440.0.2560.1400" timestamp="1602262408356" />
-    <state width="763" height="922" key="GridCell.Tab.0.bottom" timestamp="1602296082954">
+    <state width="1030" height="908" key="GridCell.Tab.0.bottom" timestamp="1602306541213">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state width="763" height="922" key="GridCell.Tab.0.bottom/0.0.3440.1400/3440.0.2560.1400@0.0.3440.1400" timestamp="1602296082954" />
-    <state width="2517" height="320" key="GridCell.Tab.0.bottom/0.0.3440.1400/3440.0.2560.1400@3440.0.2560.1400" timestamp="1602262204845" />
-    <state width="763" height="922" key="GridCell.Tab.0.center" timestamp="1602296082953">
+    <state width="1030" height="908" key="GridCell.Tab.0.bottom/0.0.3440.1400/3440.0.2560.1400@0.0.3440.1400" timestamp="1602306541213" />
+    <state width="763" height="1272" key="GridCell.Tab.0.bottom/0.0.3440.1400/3440.0.2560.1400@3440.0.2560.1400" timestamp="1602296752062" />
+    <state width="1030" height="908" key="GridCell.Tab.0.center" timestamp="1602306541213">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state width="763" height="922" key="GridCell.Tab.0.center/0.0.3440.1400/3440.0.2560.1400@0.0.3440.1400" timestamp="1602296082953" />
-    <state width="2517" height="320" key="GridCell.Tab.0.center/0.0.3440.1400/3440.0.2560.1400@3440.0.2560.1400" timestamp="1602262204845" />
-    <state width="763" height="922" key="GridCell.Tab.0.left" timestamp="1602296082953">
+    <state width="1030" height="908" key="GridCell.Tab.0.center/0.0.3440.1400/3440.0.2560.1400@0.0.3440.1400" timestamp="1602306541213" />
+    <state width="763" height="1272" key="GridCell.Tab.0.center/0.0.3440.1400/3440.0.2560.1400@3440.0.2560.1400" timestamp="1602296752062" />
+    <state width="1030" height="908" key="GridCell.Tab.0.left" timestamp="1602306541213">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state width="763" height="922" key="GridCell.Tab.0.left/0.0.3440.1400/3440.0.2560.1400@0.0.3440.1400" timestamp="1602296082953" />
-    <state width="2517" height="320" key="GridCell.Tab.0.left/0.0.3440.1400/3440.0.2560.1400@3440.0.2560.1400" timestamp="1602262204845" />
-    <state width="763" height="922" key="GridCell.Tab.0.right" timestamp="1602296082954">
+    <state width="1030" height="908" key="GridCell.Tab.0.left/0.0.3440.1400/3440.0.2560.1400@0.0.3440.1400" timestamp="1602306541213" />
+    <state width="763" height="1272" key="GridCell.Tab.0.left/0.0.3440.1400/3440.0.2560.1400@3440.0.2560.1400" timestamp="1602296752062" />
+    <state width="1030" height="908" key="GridCell.Tab.0.right" timestamp="1602306541213">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state width="763" height="922" key="GridCell.Tab.0.right/0.0.3440.1400/3440.0.2560.1400@0.0.3440.1400" timestamp="1602296082954" />
-    <state width="2517" height="320" key="GridCell.Tab.0.right/0.0.3440.1400/3440.0.2560.1400@3440.0.2560.1400" timestamp="1602262204845" />
-    <state width="763" height="922" key="GridCell.Tab.1.bottom" timestamp="1602296081270">
+    <state width="1030" height="908" key="GridCell.Tab.0.right/0.0.3440.1400/3440.0.2560.1400@0.0.3440.1400" timestamp="1602306541213" />
+    <state width="763" height="1272" key="GridCell.Tab.0.right/0.0.3440.1400/3440.0.2560.1400@3440.0.2560.1400" timestamp="1602296752062" />
+    <state width="1030" height="908" key="GridCell.Tab.1.bottom" timestamp="1602306520970">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state width="763" height="922" key="GridCell.Tab.1.bottom/0.0.3440.1400/3440.0.2560.1400@0.0.3440.1400" timestamp="1602296081270" />
-    <state width="2517" height="320" key="GridCell.Tab.1.bottom/0.0.3440.1400/3440.0.2560.1400@3440.0.2560.1400" timestamp="1602262204845" />
-    <state width="763" height="922" key="GridCell.Tab.1.center" timestamp="1602296081270">
+    <state width="1030" height="908" key="GridCell.Tab.1.bottom/0.0.3440.1400/3440.0.2560.1400@0.0.3440.1400" timestamp="1602306520970" />
+    <state width="763" height="1272" key="GridCell.Tab.1.bottom/0.0.3440.1400/3440.0.2560.1400@3440.0.2560.1400" timestamp="1602296752062" />
+    <state width="1030" height="908" key="GridCell.Tab.1.center" timestamp="1602306520970">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state width="763" height="922" key="GridCell.Tab.1.center/0.0.3440.1400/3440.0.2560.1400@0.0.3440.1400" timestamp="1602296081270" />
-    <state width="2517" height="320" key="GridCell.Tab.1.center/0.0.3440.1400/3440.0.2560.1400@3440.0.2560.1400" timestamp="1602262204845" />
-    <state width="763" height="922" key="GridCell.Tab.1.left" timestamp="1602296081270">
+    <state width="1030" height="908" key="GridCell.Tab.1.center/0.0.3440.1400/3440.0.2560.1400@0.0.3440.1400" timestamp="1602306520970" />
+    <state width="763" height="1272" key="GridCell.Tab.1.center/0.0.3440.1400/3440.0.2560.1400@3440.0.2560.1400" timestamp="1602296752062" />
+    <state width="1030" height="908" key="GridCell.Tab.1.left" timestamp="1602306520970">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state width="763" height="922" key="GridCell.Tab.1.left/0.0.3440.1400/3440.0.2560.1400@0.0.3440.1400" timestamp="1602296081270" />
-    <state width="2517" height="320" key="GridCell.Tab.1.left/0.0.3440.1400/3440.0.2560.1400@3440.0.2560.1400" timestamp="1602262204845" />
-    <state width="763" height="922" key="GridCell.Tab.1.right" timestamp="1602296081270">
+    <state width="1030" height="908" key="GridCell.Tab.1.left/0.0.3440.1400/3440.0.2560.1400@0.0.3440.1400" timestamp="1602306520970" />
+    <state width="763" height="1272" key="GridCell.Tab.1.left/0.0.3440.1400/3440.0.2560.1400@3440.0.2560.1400" timestamp="1602296752062" />
+    <state width="1030" height="908" key="GridCell.Tab.1.right" timestamp="1602306520970">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state width="763" height="922" key="GridCell.Tab.1.right/0.0.3440.1400/3440.0.2560.1400@0.0.3440.1400" timestamp="1602296081270" />
-    <state width="2517" height="320" key="GridCell.Tab.1.right/0.0.3440.1400/3440.0.2560.1400@3440.0.2560.1400" timestamp="1602262204845" />
+    <state width="1030" height="908" key="GridCell.Tab.1.right/0.0.3440.1400/3440.0.2560.1400@0.0.3440.1400" timestamp="1602306520970" />
+    <state width="763" height="1272" key="GridCell.Tab.1.right/0.0.3440.1400/3440.0.2560.1400@3440.0.2560.1400" timestamp="1602296752062" />
     <state x="2081" y="345" key="SettingsEditor" timestamp="1602268041940">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
@@ -272,36 +270,20 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="ruby-line">
           <url>file://$PROJECT_DIR$/prog2.rb</url>
-          <line>12</line>
+          <line>14</line>
           <properties myBlockOrdinal="-1">
             <option name="block-ordinal" value="-1" />
           </properties>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="ruby-line">
-          <url>file://$PROJECT_DIR$/cf_grammer.rb</url>
-          <line>47</line>
-          <properties myBlockOrdinal="-1">
-            <option name="block-ordinal" value="-1" />
-          </properties>
-          <option name="timeStamp" value="48" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="ruby-line">
-          <url>file://$PROJECT_DIR$/cf_grammer.rb</url>
-          <line>108</line>
-          <properties myBlockOrdinal="-1">
-            <option name="block-ordinal" value="-1" />
-          </properties>
-          <option name="timeStamp" value="53" />
+          <option name="timeStamp" value="65" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Program2@cg_grammer_unittesting.rcov" NAME="cg_grammer_unittesting Coverage Results" MODIFIED="1602287665862" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Program2" />
+    <SUITE FILE_PATH="coverage/Program2@cg_grammer_unittesting.rcov" NAME="cg_grammer_unittesting Coverage Results" MODIFIED="1602303624838" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Program2" />
     <SUITE FILE_PATH="coverage/Program2@ruby_cf_grammer_rb.rcov" NAME="ruby cf_grammer.rb Coverage Results" MODIFIED="1602263759299" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Program2" />
     <SUITE FILE_PATH="coverage/Program2@cf_grammer.rcov" NAME="cf_grammer Coverage Results" MODIFIED="1602278743511" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Program2" />
-    <SUITE FILE_PATH="coverage/Program2@cf_grammer_testing.rcov" NAME="cf_grammer_testing Coverage Results" MODIFIED="1602291108521" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Program2" />
-    <SUITE FILE_PATH="coverage/Program2@prog2.rcov" NAME="prog2 Coverage Results" MODIFIED="1602296080709" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Program2" />
+    <SUITE FILE_PATH="coverage/Program2@cf_grammer_testing.rcov" NAME="cf_grammer_testing Coverage Results" MODIFIED="1602304264034" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Program2" />
+    <SUITE FILE_PATH="coverage/Program2@prog2.rcov" NAME="prog2 Coverage Results" MODIFIED="1602306518123" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Program2" />
   </component>
 </project>
