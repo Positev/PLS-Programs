@@ -1,13 +1,18 @@
+#CFGrammar class will read in a list of rules from STDin and generate a set of possible
+# sentences with a length less than or equal to the maxlen
+
 class CFGrammar
-  attr_accessor :hash_words
+
+  #Initialize all variables used in this class to 0 or an empty collection
   def initialize
     @cfg_rules = Array.new
     @count_rules = 0
     @max_len = 0
     @hash_words = Hash.new
-    @nonterminals = Array.new
+    @non_terminals = Array.new
   end
 
+  #Read the rules from stdin, print out some metrics, print all rules gathered, then print all generated sentences
   def run
     @cfg_rules.each do |rule|
       read_rule(rule)
@@ -25,11 +30,12 @@ class CFGrammar
     puts generate_sentences
   end
 
+  #Generate all possible sentences
   def generate_sentences
     sentences = []
     stack = []
     stack.push(@hash_words.values[0][0].join(' '))
-    while stack.length.positive? #while stack not empty
+    while stack.length > 0 #while stack not empty
       rule = stack.pop #pop element off stack
       next unless rule.split(' ').length <= @max_len && !rule.nil?
 
@@ -41,6 +47,7 @@ class CFGrammar
     sentences
   end
 
+  #Get the index of the left most non-terminal to be replaced
   def index_of_left_most_nonterminal(rule)
     non_term_index = -1
     current_index = 0
@@ -56,6 +63,7 @@ class CFGrammar
     non_term_index
   end
 
+  # A sentence is a set of only terminals and no non-terminals
   def is_sentence(rule)
     split_rule = rule.split(' ')
     return false if split_rule == []
@@ -69,10 +77,10 @@ class CFGrammar
     true
   end
 
-  # read rule as string and produce all possible permeutations by replacing first non-terminal from left to right
+  # read rule as string and produce all possible permutations by replacing first non-terminal from left to right
   # input rule as string, right side of arrow
   # if no non-terminals, return input
-  # if any non-terminals, generate all permeuttation by applying rules
+  # if any non-terminals, generate all permutations by applying rules
   def generate_rule_permeutations(rule)
     replace_index = -1
     current_index = 0
@@ -112,6 +120,7 @@ class CFGrammar
     end
   end
 
+  #gather and parse rule from stdin
   def read_rule(rule)
     arr = rule.split(' -> ')
     rule_name = arr[0]
@@ -121,6 +130,7 @@ class CFGrammar
     [rule_name, rule_value]
   end
 
+  #read and parse all input from stdin
   def read_rules
     read_len = false
     while (line = gets)

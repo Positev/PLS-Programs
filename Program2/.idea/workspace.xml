@@ -23,6 +23,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bb8e70ba-a7fa-4e69-9808-e9443d3f75c5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Program2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Program2.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cf_grammer.rb" beforeDir="false" afterPath="$PROJECT_DIR$/cf_grammer.rb" afterDir="false" />
     </list>
@@ -53,7 +55,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.editor" />
+    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.ruby.settings.RubyActiveModuleSdkConfigurable" />
   </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
@@ -70,7 +72,11 @@
       <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
       <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
       <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
-      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
       <EXTENSION ID="org.jetbrains.plugins.ruby.rails.run.RailsRunConfigurationExtension" SCRATCH_USE_RAILS_RUNNER="false" />
       <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/cf_grammer.rb" />
       <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
@@ -85,7 +91,11 @@
       <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
       <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
       <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
-      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
       <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/cf_grammer_testing.rb" />
       <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
       <method v="2" />
@@ -99,7 +109,11 @@
       <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
       <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
       <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
-      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
       <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/cg_grammer_unittesting.rb" />
       <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
       <method v="2" />
@@ -113,7 +127,11 @@
       <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
       <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
       <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
-      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
       <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/prog2.rb" />
       <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
       <method v="2" />
@@ -127,7 +145,11 @@
       <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
       <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
       <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
-      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
       <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/cf_grammer.rb" />
       <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
       <method v="2" />
@@ -164,6 +186,7 @@
       <workItem from="1602262374419" duration="711000" />
       <workItem from="1602263106214" duration="25510000" />
       <workItem from="1602301887162" duration="4180000" />
+      <workItem from="1602368198247" duration="1464000" />
     </task>
     <task id="LOCAL-00001" summary="Started program 2">
       <created>1602280648721</created>
@@ -207,26 +230,34 @@
       <screen x="3440" y="0" width="2560" height="1400" />
     </state>
     <state x="3966" y="444" key="FileChooserDialogImpl/0.0.3440.1400/3440.0.2560.1400@3440.0.2560.1400" timestamp="1602262408356" />
-    <state width="1030" height="908" key="GridCell.Tab.0.bottom" timestamp="1602306541213">
-      <screen x="0" y="0" width="3440" height="1400" />
+    <state width="1878" height="344" key="GridCell.Tab.0.bottom" timestamp="1602381384472">
+      <screen x="0" y="25" width="1920" height="1175" />
     </state>
+    <state width="1878" height="344" key="GridCell.Tab.0.bottom/0.0.1920.1200@0.0.1920.1200" timestamp="1602369045203" />
     <state width="1030" height="908" key="GridCell.Tab.0.bottom/0.0.3440.1400/3440.0.2560.1400@0.0.3440.1400" timestamp="1602306541213" />
     <state width="763" height="1272" key="GridCell.Tab.0.bottom/0.0.3440.1400/3440.0.2560.1400@3440.0.2560.1400" timestamp="1602296752062" />
-    <state width="1030" height="908" key="GridCell.Tab.0.center" timestamp="1602306541213">
-      <screen x="0" y="0" width="3440" height="1400" />
+    <state width="1878" height="344" key="GridCell.Tab.0.bottom/0.25.1920.1175@0.25.1920.1175" timestamp="1602381384472" />
+    <state width="1878" height="344" key="GridCell.Tab.0.center" timestamp="1602381384470">
+      <screen x="0" y="25" width="1920" height="1175" />
     </state>
+    <state width="1878" height="344" key="GridCell.Tab.0.center/0.0.1920.1200@0.0.1920.1200" timestamp="1602369045201" />
     <state width="1030" height="908" key="GridCell.Tab.0.center/0.0.3440.1400/3440.0.2560.1400@0.0.3440.1400" timestamp="1602306541213" />
     <state width="763" height="1272" key="GridCell.Tab.0.center/0.0.3440.1400/3440.0.2560.1400@3440.0.2560.1400" timestamp="1602296752062" />
-    <state width="1030" height="908" key="GridCell.Tab.0.left" timestamp="1602306541213">
-      <screen x="0" y="0" width="3440" height="1400" />
+    <state width="1878" height="344" key="GridCell.Tab.0.center/0.25.1920.1175@0.25.1920.1175" timestamp="1602381384470" />
+    <state width="1878" height="344" key="GridCell.Tab.0.left" timestamp="1602381384470">
+      <screen x="0" y="25" width="1920" height="1175" />
     </state>
+    <state width="1878" height="344" key="GridCell.Tab.0.left/0.0.1920.1200@0.0.1920.1200" timestamp="1602369045200" />
     <state width="1030" height="908" key="GridCell.Tab.0.left/0.0.3440.1400/3440.0.2560.1400@0.0.3440.1400" timestamp="1602306541213" />
     <state width="763" height="1272" key="GridCell.Tab.0.left/0.0.3440.1400/3440.0.2560.1400@3440.0.2560.1400" timestamp="1602296752062" />
-    <state width="1030" height="908" key="GridCell.Tab.0.right" timestamp="1602306541213">
-      <screen x="0" y="0" width="3440" height="1400" />
+    <state width="1878" height="344" key="GridCell.Tab.0.left/0.25.1920.1175@0.25.1920.1175" timestamp="1602381384470" />
+    <state width="1878" height="344" key="GridCell.Tab.0.right" timestamp="1602381384471">
+      <screen x="0" y="25" width="1920" height="1175" />
     </state>
+    <state width="1878" height="344" key="GridCell.Tab.0.right/0.0.1920.1200@0.0.1920.1200" timestamp="1602369045202" />
     <state width="1030" height="908" key="GridCell.Tab.0.right/0.0.3440.1400/3440.0.2560.1400@0.0.3440.1400" timestamp="1602306541213" />
     <state width="763" height="1272" key="GridCell.Tab.0.right/0.0.3440.1400/3440.0.2560.1400@3440.0.2560.1400" timestamp="1602296752062" />
+    <state width="1878" height="344" key="GridCell.Tab.0.right/0.25.1920.1175@0.25.1920.1175" timestamp="1602381384471" />
     <state width="1030" height="908" key="GridCell.Tab.1.bottom" timestamp="1602306520970">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
@@ -247,9 +278,10 @@
     </state>
     <state width="1030" height="908" key="GridCell.Tab.1.right/0.0.3440.1400/3440.0.2560.1400@0.0.3440.1400" timestamp="1602306520970" />
     <state width="763" height="1272" key="GridCell.Tab.1.right/0.0.3440.1400/3440.0.2560.1400@3440.0.2560.1400" timestamp="1602296752062" />
-    <state x="2081" y="345" key="SettingsEditor" timestamp="1602268041940">
-      <screen x="0" y="0" width="3440" height="1400" />
+    <state x="938" y="296" key="SettingsEditor" timestamp="1602368313636">
+      <screen x="0" y="0" width="1920" height="1200" />
     </state>
+    <state x="938" y="296" key="SettingsEditor/0.0.1920.1200@0.0.1920.1200" timestamp="1602368313636" />
     <state x="2081" y="345" key="SettingsEditor/0.0.3440.1400/3440.0.2560.1400@0.0.3440.1400" timestamp="1602268041940" />
     <state x="3687" y="334" key="SettingsEditor/0.0.3440.1400/3440.0.2560.1400@3440.0.2560.1400" timestamp="1602262883560" />
     <state x="1441" y="441" width="570" height="524" key="StructurePopup" timestamp="1602280742837">
@@ -280,10 +312,10 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Program2@cf_grammer_testing.rcov" NAME="cf_grammer_testing Coverage Results" MODIFIED="1602304264034" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Program2" />
+    <SUITE FILE_PATH="coverage/Program2@prog2.rcov" NAME="prog2 Coverage Results" MODIFIED="1602368354913" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Program2" />
     <SUITE FILE_PATH="coverage/Program2@cg_grammer_unittesting.rcov" NAME="cg_grammer_unittesting Coverage Results" MODIFIED="1602303624838" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Program2" />
     <SUITE FILE_PATH="coverage/Program2@ruby_cf_grammer_rb.rcov" NAME="ruby cf_grammer.rb Coverage Results" MODIFIED="1602263759299" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Program2" />
     <SUITE FILE_PATH="coverage/Program2@cf_grammer.rcov" NAME="cf_grammer Coverage Results" MODIFIED="1602278743511" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Program2" />
-    <SUITE FILE_PATH="coverage/Program2@cf_grammer_testing.rcov" NAME="cf_grammer_testing Coverage Results" MODIFIED="1602304264034" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Program2" />
-    <SUITE FILE_PATH="coverage/Program2@prog2.rcov" NAME="prog2 Coverage Results" MODIFIED="1602306518123" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Program2" />
   </component>
 </project>
