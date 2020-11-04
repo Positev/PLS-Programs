@@ -64,16 +64,21 @@
       <module name="Program3" />
       <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="" />
       <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$MODULE_DIR$" />
-      <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
-      <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="true" />
+      <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="ruby-2.7.2-p137" />
       <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
       <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
       <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
       <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" />
+      <EXTENSION ID="org.jetbrains.plugins.ruby.rails.run.RailsRunConfigurationExtension" SCRATCH_USE_RAILS_RUNNER="false" />
       <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/prog3.rb" />
       <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Ruby.dot_lexer" />
+      <item itemvalue="Ruby.prog3" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Ruby.prog3" />
@@ -109,75 +114,80 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state width="570" height="466" key="DebuggerActiveHint" timestamp="1604462549453">
+    <state x="2085" y="358" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604523550283">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="2085" y="358" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.3440.1400/3440.0.2560.1400@0.0.3440.1400" timestamp="1604523550283" />
+    <state width="570" height="466" key="DebuggerActiveHint" timestamp="1604524354710">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
     <state width="570" height="466" key="DebuggerActiveHint/0.0.3440.1400/3440.0.1440.2520@0.0.3440.1400" timestamp="1604462549453" />
-    <state width="1674" height="400" key="GridCell.Tab.0.bottom" timestamp="1604463144038">
+    <state width="570" height="466" key="DebuggerActiveHint/0.0.3440.1400/3440.0.2560.1400@0.0.3440.1400" timestamp="1604524354710" />
+    <state width="1571" height="317" key="GridCell.Tab.0.bottom" timestamp="1604524408975">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
     <state width="1674" height="400" key="GridCell.Tab.0.bottom/0.0.3440.1400/3440.0.1440.2520@0.0.3440.1400" timestamp="1604463144038" />
-    <state width="1674" height="400" key="GridCell.Tab.0.center" timestamp="1604463144038">
+    <state width="1571" height="317" key="GridCell.Tab.0.bottom/0.0.3440.1400/3440.0.2560.1400@0.0.3440.1400" timestamp="1604524408975" />
+    <state width="1571" height="317" key="GridCell.Tab.0.center" timestamp="1604524408975">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
     <state width="1674" height="400" key="GridCell.Tab.0.center/0.0.3440.1400/3440.0.1440.2520@0.0.3440.1400" timestamp="1604463144038" />
-    <state width="1674" height="400" key="GridCell.Tab.0.left" timestamp="1604463144038">
+    <state width="1571" height="317" key="GridCell.Tab.0.center/0.0.3440.1400/3440.0.2560.1400@0.0.3440.1400" timestamp="1604524408975" />
+    <state width="1571" height="317" key="GridCell.Tab.0.left" timestamp="1604524408975">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
     <state width="1674" height="400" key="GridCell.Tab.0.left/0.0.3440.1400/3440.0.1440.2520@0.0.3440.1400" timestamp="1604463144038" />
-    <state width="1674" height="400" key="GridCell.Tab.0.right" timestamp="1604463144038">
+    <state width="1571" height="317" key="GridCell.Tab.0.left/0.0.3440.1400/3440.0.2560.1400@0.0.3440.1400" timestamp="1604524408975" />
+    <state width="1571" height="317" key="GridCell.Tab.0.right" timestamp="1604524408975">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
     <state width="1674" height="400" key="GridCell.Tab.0.right/0.0.3440.1400/3440.0.1440.2520@0.0.3440.1400" timestamp="1604463144038" />
-    <state width="1674" height="218" key="GridCell.Tab.1.bottom" timestamp="1604463073719">
+    <state width="1571" height="317" key="GridCell.Tab.0.right/0.0.3440.1400/3440.0.2560.1400@0.0.3440.1400" timestamp="1604524408975" />
+    <state width="1571" height="317" key="GridCell.Tab.1.bottom" timestamp="1604524408975">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
     <state width="1674" height="218" key="GridCell.Tab.1.bottom/0.0.3440.1400/3440.0.1440.2520@0.0.3440.1400" timestamp="1604463073719" />
-    <state width="1674" height="218" key="GridCell.Tab.1.center" timestamp="1604463073719">
+    <state width="1571" height="317" key="GridCell.Tab.1.bottom/0.0.3440.1400/3440.0.2560.1400@0.0.3440.1400" timestamp="1604524408975" />
+    <state width="1571" height="317" key="GridCell.Tab.1.center" timestamp="1604524408975">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
     <state width="1674" height="218" key="GridCell.Tab.1.center/0.0.3440.1400/3440.0.1440.2520@0.0.3440.1400" timestamp="1604463073719" />
-    <state width="1674" height="218" key="GridCell.Tab.1.left" timestamp="1604463073719">
+    <state width="1571" height="317" key="GridCell.Tab.1.center/0.0.3440.1400/3440.0.2560.1400@0.0.3440.1400" timestamp="1604524408975" />
+    <state width="1571" height="317" key="GridCell.Tab.1.left" timestamp="1604524408975">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
     <state width="1674" height="218" key="GridCell.Tab.1.left/0.0.3440.1400/3440.0.1440.2520@0.0.3440.1400" timestamp="1604463073719" />
-    <state width="1674" height="218" key="GridCell.Tab.1.right" timestamp="1604463073719">
+    <state width="1571" height="317" key="GridCell.Tab.1.left/0.0.3440.1400/3440.0.2560.1400@0.0.3440.1400" timestamp="1604524408975" />
+    <state width="1571" height="317" key="GridCell.Tab.1.right" timestamp="1604524408975">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
     <state width="1674" height="218" key="GridCell.Tab.1.right/0.0.3440.1400/3440.0.1440.2520@0.0.3440.1400" timestamp="1604463073719" />
+    <state width="1571" height="317" key="GridCell.Tab.1.right/0.0.3440.1400/3440.0.2560.1400@0.0.3440.1400" timestamp="1604524408975" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="ruby-line">
-          <url>file://$PROJECT_DIR$/dot_lexer.rb</url>
-          <line>52</line>
+          <url>file://$PROJECT_DIR$/prog3.rb</url>
+          <line>15</line>
           <properties myBlockOrdinal="-1">
             <option name="block-ordinal" value="-1" />
           </properties>
-          <option name="timeStamp" value="13" />
+          <option name="timeStamp" value="29" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="ruby-line">
           <url>file://$PROJECT_DIR$/dot_lexer.rb</url>
-          <line>51</line>
+          <line>27</line>
           <properties myBlockOrdinal="-1">
             <option name="block-ordinal" value="-1" />
           </properties>
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="ruby-line">
-          <url>file://$PROJECT_DIR$/dot_lexer.rb</url>
-          <line>43</line>
-          <properties myBlockOrdinal="-1">
-            <option name="block-ordinal" value="-1" />
-          </properties>
-          <option name="timeStamp" value="15" />
+          <option name="timeStamp" value="31" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Program3@prog3.rcov" NAME="prog3 Coverage Results" MODIFIED="1604463144034" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Program3" />
+    <SUITE FILE_PATH="coverage/Program3@prog3.rcov" NAME="prog3 Coverage Results" MODIFIED="1604524408966" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Program3" />
     <SUITE FILE_PATH="coverage/Program3@dot_lexer.rcov" NAME="dot_lexer Coverage Results" MODIFIED="1604454438284" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Program3" />
   </component>
 </project>

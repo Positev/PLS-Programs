@@ -12,7 +12,7 @@ lexer = DotLexer.new
 
 t = lexer.next_token
 
-while Token.EOF != t.type
+while -2 != t.type
   puts t
   t = lexer.next_token
 end

@@ -1,7 +1,5 @@
 require_relative 'token'
 class DotLexer
-
-
   @@regs = [ #https://regex101.com/ used heavily for this section for testing.
       /^[a-zA-Z0-9]*$/, #ID => 1
       /(^[0-9][0-9]?)/,                  #INT => 2
@@ -19,65 +17,53 @@ class DotLexer
       /(\s)/                       #WS => 14
   ]
 
-
-
-
   def initialize
+    @tokens = make_tokens(get_all_in_from_stdin)
+    @tokens.push(Token.new('', -2))
+    @cur_token = 0
+  end
+
+  def next_token
+    token = @tokens[@cur_token]
+    @cur_token = @cur_token + 1
+    return token
+  end
+
+  def get_all_in_from_stdin
     ins = []
     input = gets
     until input.nil?
       ins.push(input)
       input = gets
     end
-    @in = ins.join()
-    make_tokens
+    return ins.join()
   end
 
-  def make_tokens
-    ls = []
-    unwanted_characters = /([\s+,\t+,\n+,\r+])/
-    @in.split(Regexp.union(@@regs[2,13])).each do |m|
-      ls.push(m.gsub(unwanted_characters, ''))
-    end
-    texts = ls.reject{ |n| n.empty?}
-
+  def make_tokens(all_text)
+    list_of_token_texts = []
     tokens = []
-    texts.each do |text|
-      tokens.push(make_token(text))
+    unwanted_characters = /([\s+,\t+,\n+,\r+])/
+    regexp_for_split = Regexp.union(@@regs[2,13])
+    all_text.split(regexp_for_split).each do |text_segment|
+      possible_token = text_segment.gsub(unwanted_characters, '')
+      list_of_token_texts.push(possible_token)
     end
-    puts tokens
+    list_of_token_texts = list_of_token_texts.reject{ |n| n.empty?}
+    list_of_token_texts.each do |text|
+      make_token(text).each do |token|
+        tokens.push(token)
+      end
+    end
+    return tokens
   end
 
   def make_token(token_text)
-    (0...@@regs.length - 1 ).reverse_each do |i|
-      regex_pattern = @@regs[i]
-      if (token_text.match(regex_pattern))
-        return Token.new(token_text,  i + 1).to_s
-        end
-      end
-    return handle_illegal_characters(token_text)
-  end
-
-  def is_token(text)
-    (0...@@regs.length - 1 ).reverse_each do |i|
-      regex_pattern = @@regs[i]
-      if text.match regex_pattern
-        return true
-      end
+    if is_token(token_text)
+      return [Token.new(token_text, get_token_type(token_text))]
+    else
+      return handle_illegal_characters(token_text)
     end
-    false
   end
-
-  def get_token_type(text)
-    (0...@@regs.length - 1 ).reverse_each do |i|
-      regex_pattern = @@regs[i]
-      if text.match regex_pattern
-        return i + 1
-      end
-    end
-    false
-  end
-
 
   def handle_illegal_characters(token_text)
     tokens = []
@@ -98,5 +84,23 @@ class DotLexer
     return tokens
     end
 
+  def is_token(text)
+    (0...@@regs.length - 1 ).reverse_each do |i|
+      regex_pattern = @@regs[i]
+      if text.match regex_pattern
+        return true
+      end
+    end
+    false
+  end
 
+  def get_token_type(text)
+    (0...@@regs.length - 1 ).reverse_each do |i|
+      regex_pattern = @@regs[i]
+      if text.match regex_pattern
+        return i + 1
+      end
+    end
+    false
+  end
 end
