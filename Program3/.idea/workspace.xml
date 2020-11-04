@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ccf15a9d-b348-4adf-8e40-96db4802be6b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../Program2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Program2/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prog3.in" beforeDir="false" afterPath="$PROJECT_DIR$/Prog3.in" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dot_lexer.rb" beforeDir="false" afterPath="$PROJECT_DIR$/dot_lexer.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prog3.rb" beforeDir="false" afterPath="$PROJECT_DIR$/prog3.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/token.rb" beforeDir="false" afterPath="$PROJECT_DIR$/token.rb" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1jnyvhKqaPD2UdQNkXZDKTvRuz9" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunManager" selected="Ruby.prog3">
+    <configuration name="dot_lexer" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
+      <module name="Program3" />
+      <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$MODULE_DIR$" />
+      <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/dot_lexer.rb" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="prog3" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
+      <module name="Program3" />
+      <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$MODULE_DIR$" />
+      <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/prog3.rb" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Ruby.prog3" />
+        <item itemvalue="Ruby.dot_lexer" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpringUtil" SPRING_PRE_LOADER_OPTION="true" RAKE_SPRING_PRE_LOADER_OPTION="true" RAILS_SPRING_PRE_LOADER_OPTION="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ccf15a9d-b348-4adf-8e40-96db4802be6b" name="Default Changelist" comment="" />
+      <created>1604454383068</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1604454383068</updated>
+      <workItem from="1604454384111" duration="8591000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="570" height="466" key="DebuggerActiveHint" timestamp="1604462549453">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="570" height="466" key="DebuggerActiveHint/0.0.3440.1400/3440.0.1440.2520@0.0.3440.1400" timestamp="1604462549453" />
+    <state width="1674" height="400" key="GridCell.Tab.0.bottom" timestamp="1604463144038">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="1674" height="400" key="GridCell.Tab.0.bottom/0.0.3440.1400/3440.0.1440.2520@0.0.3440.1400" timestamp="1604463144038" />
+    <state width="1674" height="400" key="GridCell.Tab.0.center" timestamp="1604463144038">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="1674" height="400" key="GridCell.Tab.0.center/0.0.3440.1400/3440.0.1440.2520@0.0.3440.1400" timestamp="1604463144038" />
+    <state width="1674" height="400" key="GridCell.Tab.0.left" timestamp="1604463144038">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="1674" height="400" key="GridCell.Tab.0.left/0.0.3440.1400/3440.0.1440.2520@0.0.3440.1400" timestamp="1604463144038" />
+    <state width="1674" height="400" key="GridCell.Tab.0.right" timestamp="1604463144038">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="1674" height="400" key="GridCell.Tab.0.right/0.0.3440.1400/3440.0.1440.2520@0.0.3440.1400" timestamp="1604463144038" />
+    <state width="1674" height="218" key="GridCell.Tab.1.bottom" timestamp="1604463073719">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="1674" height="218" key="GridCell.Tab.1.bottom/0.0.3440.1400/3440.0.1440.2520@0.0.3440.1400" timestamp="1604463073719" />
+    <state width="1674" height="218" key="GridCell.Tab.1.center" timestamp="1604463073719">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="1674" height="218" key="GridCell.Tab.1.center/0.0.3440.1400/3440.0.1440.2520@0.0.3440.1400" timestamp="1604463073719" />
+    <state width="1674" height="218" key="GridCell.Tab.1.left" timestamp="1604463073719">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="1674" height="218" key="GridCell.Tab.1.left/0.0.3440.1400/3440.0.1440.2520@0.0.3440.1400" timestamp="1604463073719" />
+    <state width="1674" height="218" key="GridCell.Tab.1.right" timestamp="1604463073719">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="1674" height="218" key="GridCell.Tab.1.right/0.0.3440.1400/3440.0.1440.2520@0.0.3440.1400" timestamp="1604463073719" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="ruby-line">
+          <url>file://$PROJECT_DIR$/dot_lexer.rb</url>
+          <line>52</line>
+          <properties myBlockOrdinal="-1">
+            <option name="block-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="ruby-line">
+          <url>file://$PROJECT_DIR$/dot_lexer.rb</url>
+          <line>51</line>
+          <properties myBlockOrdinal="-1">
+            <option name="block-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="ruby-line">
+          <url>file://$PROJECT_DIR$/dot_lexer.rb</url>
+          <line>43</line>
+          <properties myBlockOrdinal="-1">
+            <option name="block-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Program3@prog3.rcov" NAME="prog3 Coverage Results" MODIFIED="1604463144034" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Program3" />
+    <SUITE FILE_PATH="coverage/Program3@dot_lexer.rcov" NAME="dot_lexer Coverage Results" MODIFIED="1604454438284" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Program3" />
+  </component>
+</project>

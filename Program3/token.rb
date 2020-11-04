@@ -1,15 +1,14 @@
-
 class Token
-    attr_reader :name, :id, :pattern
+    
 
-    def initialize (name, id, pattern)
+    def initialize (text, id)
         super()
-        @name = name
+        @text = text
         @id = id
-        @pattern = pattern
     end
 
-    def fits(str)
-        return @pattern.matches(str)
+    def to_s()
+        "[#{@text}:#{@id}]"
     end
+
 end
