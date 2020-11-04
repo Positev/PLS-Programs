@@ -1,5 +1,5 @@
 class Token
-    
+
 
     def initialize (text, id)
         super()
@@ -8,7 +8,11 @@ class Token
     end
 
     def to_s()
-        "[#{@text}:#{@id}]"
+        if @id != -1
+            return "[#{@text}:#{@id}]"
+        else
+            return "illegal char: #{@text}"
+        end
     end
 
 end
