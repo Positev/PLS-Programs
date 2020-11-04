@@ -5,7 +5,7 @@ class DotLexer
   @@regs = [
       /^[a-zA-Z]([a-zA-Z0-9])?/, #ID => 1
       /^[0-9][0-9]?/,                  #INT => 2
-      /(\".\")/,           #STRING => 3
+      /("[^"]*?")/,           #STRING => 3
       /(\{)/,                    #LCURLY => 4
       /(\})/,                    #RCURLY => 5
       /(;)/,                     #SEMI => 6
@@ -53,7 +53,7 @@ class DotLexer
         puts(Token.new(token_text,  i+1).to_s)
         return
       end
-
     end
+    puts "ILLEGAL TOKEN"
   end
 end
