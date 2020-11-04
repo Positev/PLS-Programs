@@ -6,7 +6,7 @@ require_relative "dot_lexer"
 
 # Uncomment this line for debugging. Must place Prog3.in with desired input
 # in the same folder as your ruby files.
-#$stdin.reopen("Prog3.in")
+$stdin.reopen("Prog3.in")
 
 lexer = DotLexer.new
 
