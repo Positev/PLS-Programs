@@ -20,9 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="43b1a040-593f-4663-8c77-a3635969dfa2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Tests/test_dot_lexer_test.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Prog3.in" beforeDir="false" afterPath="$PROJECT_DIR$/Prog3.in" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dot_lexer.rb" beforeDir="false" afterPath="$PROJECT_DIR$/dot_lexer.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/prog3.rb" beforeDir="false" afterPath="$PROJECT_DIR$/prog3.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/token.rb" beforeDir="false" afterPath="$PROJECT_DIR$/token.rb" afterDir="false" />
@@ -53,7 +51,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
   </component>
-  <component name="RunManager" selected="Test::Unit/Shoulda/Minitest.test_dot_lexer_test">
+  <component name="RunManager" selected="Ruby.prog3">
     <configuration name="prog3" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
       <module name="Program3" />
       <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="" />
@@ -120,8 +118,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Test::Unit/Shoulda/Minitest.test_dot_lexer_test" />
         <item itemvalue="Ruby.prog3" />
+        <item itemvalue="Test::Unit/Shoulda/Minitest.test_dot_lexer_test" />
         <item itemvalue="Test::Unit/Shoulda/Minitest.test_1" />
       </list>
     </recent_temporary>
@@ -135,7 +133,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1604705092892</updated>
-      <workItem from="1604705093927" duration="3676000" />
+      <workItem from="1604705093927" duration="5531000" />
     </task>
     <servers />
   </component>
@@ -154,26 +152,26 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state width="2699" height="362" key="GridCell.Tab.0.bottom" timestamp="1604708712438">
+    <state width="2178" height="328" key="GridCell.Tab.0.bottom" timestamp="1604710638081">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state width="2699" height="362" key="GridCell.Tab.0.bottom/0.0.3440.1400/3440.0.2560.1400@0.0.3440.1400" timestamp="1604708712438" />
-    <state width="2699" height="362" key="GridCell.Tab.0.center" timestamp="1604708712438">
+    <state width="2178" height="328" key="GridCell.Tab.0.bottom/0.0.3440.1400/3440.0.2560.1400@0.0.3440.1400" timestamp="1604710638081" />
+    <state width="2178" height="328" key="GridCell.Tab.0.center" timestamp="1604710638080">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state width="2699" height="362" key="GridCell.Tab.0.center/0.0.3440.1400/3440.0.2560.1400@0.0.3440.1400" timestamp="1604708712438" />
-    <state width="2699" height="362" key="GridCell.Tab.0.left" timestamp="1604708712438">
+    <state width="2178" height="328" key="GridCell.Tab.0.center/0.0.3440.1400/3440.0.2560.1400@0.0.3440.1400" timestamp="1604710638080" />
+    <state width="2178" height="328" key="GridCell.Tab.0.left" timestamp="1604710638080">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state width="2699" height="362" key="GridCell.Tab.0.left/0.0.3440.1400/3440.0.2560.1400@0.0.3440.1400" timestamp="1604708712438" />
-    <state width="2699" height="362" key="GridCell.Tab.0.right" timestamp="1604708712438">
+    <state width="2178" height="328" key="GridCell.Tab.0.left/0.0.3440.1400/3440.0.2560.1400@0.0.3440.1400" timestamp="1604710638080" />
+    <state width="2178" height="328" key="GridCell.Tab.0.right" timestamp="1604710638081">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state width="2699" height="362" key="GridCell.Tab.0.right/0.0.3440.1400/3440.0.2560.1400@0.0.3440.1400" timestamp="1604708712438" />
+    <state width="2178" height="328" key="GridCell.Tab.0.right/0.0.3440.1400/3440.0.2560.1400@0.0.3440.1400" timestamp="1604710638081" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Program3@prog3.rcov" NAME="prog3 Coverage Results" MODIFIED="1604708595310" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Program3" />
     <SUITE FILE_PATH="coverage/Program3@test_dot_lexer_test.rcov" NAME="test_dot_lexer_test Coverage Results" MODIFIED="1604708712430" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Program3" />
+    <SUITE FILE_PATH="coverage/Program3@prog3.rcov" NAME="prog3 Coverage Results" MODIFIED="1604710638075" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Program3" />
     <SUITE FILE_PATH="coverage/Program3@test_1.rcov" NAME="test_1 Coverage Results" MODIFIED="1604705824640" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Program3" />
   </component>
 </project>
