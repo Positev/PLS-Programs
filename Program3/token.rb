@@ -1,7 +1,7 @@
 
 class Token
 
-  attr_accessor :type
+  attr_accessor :type, :text
     @@EOF = -2
     @@INVALID = -1
 
@@ -10,6 +10,10 @@ class Token
         @text = text
         @type = id
     end
+
+  def  == (other)
+    @text == other.text and @type == other.type
+  end
 
     def to_s()
         if @type != -1

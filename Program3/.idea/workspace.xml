@@ -19,8 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ccf15a9d-b348-4adf-8e40-96db4802be6b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../Program2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Program2/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="43b1a040-593f-4663-8c77-a3635969dfa2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Tests/test_dot_lexer_test.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Prog3.in" beforeDir="false" afterPath="$PROJECT_DIR$/Prog3.in" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dot_lexer.rb" beforeDir="false" afterPath="$PROJECT_DIR$/dot_lexer.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/prog3.rb" beforeDir="false" afterPath="$PROJECT_DIR$/prog3.rb" afterDir="false" />
@@ -31,22 +32,29 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="MiniTest Template" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectId" id="1jnyvhKqaPD2UdQNkXZDKTvRuz9" />
+  <component name="ProjectId" id="1jwB5mSJB5MAKodCF7zop2ZLTb6" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultRubyCreateTestTemplate" value="MiniTest Template" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
-  <component name="RunManager" selected="Ruby.prog3">
-    <configuration name="dot_lexer" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
+  <component name="RunManager" selected="Test::Unit/Shoulda/Minitest.test_dot_lexer_test">
+    <configuration name="prog3" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
       <module name="Program3" />
       <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="" />
       <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$MODULE_DIR$" />
@@ -56,33 +64,65 @@
       <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
       <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
       <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" />
-      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/dot_lexer.rb" />
-      <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="prog3" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
-      <module name="Program3" />
-      <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="" />
-      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$MODULE_DIR$" />
-      <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="true" />
-      <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="ruby-2.7.2-p137" />
-      <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
-      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
-      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
-      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" />
-      <EXTENSION ID="org.jetbrains.plugins.ruby.rails.run.RailsRunConfigurationExtension" SCRATCH_USE_RAILS_RUNNER="false" />
       <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/prog3.rb" />
       <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
       <method v="2" />
     </configuration>
-    <list>
-      <item itemvalue="Ruby.dot_lexer" />
-      <item itemvalue="Ruby.prog3" />
-    </list>
+    <configuration name="test_1" type="TestUnitRunConfigurationType" factoryName="Test::Unit/Shoulda/Minitest" temporary="true" nameIsGenerated="true">
+      <module name="Program3" />
+      <predefined_log_file enabled="true" id="RUBY_TESTUNIT" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs>
+        <env name="JRUBY_OPTS" value="-X+O" />
+      </envs>
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/Tests/test_dot_lexer_test.rb" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_METHOD_NAME" VALUE="^test_1$" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_METHOD" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ZEUS" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="SPRING" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_OPTIONS" VALUE="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test_dot_lexer_test" type="TestUnitRunConfigurationType" factoryName="Test::Unit/Shoulda/Minitest" temporary="true" nameIsGenerated="true">
+      <module name="Program3" />
+      <predefined_log_file enabled="true" id="RUBY_TESTUNIT" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs>
+        <env name="JRUBY_OPTS" value="-X+O" />
+      </envs>
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/Tests/test_dot_lexer_test.rb" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_METHOD_NAME" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ZEUS" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="SPRING" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_OPTIONS" VALUE="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Test::Unit/Shoulda/Minitest.test_dot_lexer_test" />
         <item itemvalue="Ruby.prog3" />
-        <item itemvalue="Ruby.dot_lexer" />
+        <item itemvalue="Test::Unit/Shoulda/Minitest.test_1" />
       </list>
     </recent_temporary>
   </component>
@@ -90,12 +130,12 @@
   <component name="SpringUtil" SPRING_PRE_LOADER_OPTION="true" RAKE_SPRING_PRE_LOADER_OPTION="true" RAILS_SPRING_PRE_LOADER_OPTION="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="ccf15a9d-b348-4adf-8e40-96db4802be6b" name="Default Changelist" comment="" />
-      <created>1604454383068</created>
+      <changelist id="43b1a040-593f-4663-8c77-a3635969dfa2" name="Default Changelist" comment="" />
+      <created>1604705092892</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1604454383068</updated>
-      <workItem from="1604454384111" duration="8591000" />
+      <updated>1604705092892</updated>
+      <workItem from="1604705093927" duration="3676000" />
     </task>
     <servers />
   </component>
@@ -114,80 +154,26 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="2085" y="358" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604523550283">
+    <state width="2699" height="362" key="GridCell.Tab.0.bottom" timestamp="1604708712438">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state x="2085" y="358" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.3440.1400/3440.0.2560.1400@0.0.3440.1400" timestamp="1604523550283" />
-    <state width="570" height="466" key="DebuggerActiveHint" timestamp="1604524354710">
+    <state width="2699" height="362" key="GridCell.Tab.0.bottom/0.0.3440.1400/3440.0.2560.1400@0.0.3440.1400" timestamp="1604708712438" />
+    <state width="2699" height="362" key="GridCell.Tab.0.center" timestamp="1604708712438">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state width="570" height="466" key="DebuggerActiveHint/0.0.3440.1400/3440.0.1440.2520@0.0.3440.1400" timestamp="1604462549453" />
-    <state width="570" height="466" key="DebuggerActiveHint/0.0.3440.1400/3440.0.2560.1400@0.0.3440.1400" timestamp="1604524354710" />
-    <state width="1571" height="317" key="GridCell.Tab.0.bottom" timestamp="1604524408975">
+    <state width="2699" height="362" key="GridCell.Tab.0.center/0.0.3440.1400/3440.0.2560.1400@0.0.3440.1400" timestamp="1604708712438" />
+    <state width="2699" height="362" key="GridCell.Tab.0.left" timestamp="1604708712438">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state width="1674" height="400" key="GridCell.Tab.0.bottom/0.0.3440.1400/3440.0.1440.2520@0.0.3440.1400" timestamp="1604463144038" />
-    <state width="1571" height="317" key="GridCell.Tab.0.bottom/0.0.3440.1400/3440.0.2560.1400@0.0.3440.1400" timestamp="1604524408975" />
-    <state width="1571" height="317" key="GridCell.Tab.0.center" timestamp="1604524408975">
+    <state width="2699" height="362" key="GridCell.Tab.0.left/0.0.3440.1400/3440.0.2560.1400@0.0.3440.1400" timestamp="1604708712438" />
+    <state width="2699" height="362" key="GridCell.Tab.0.right" timestamp="1604708712438">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state width="1674" height="400" key="GridCell.Tab.0.center/0.0.3440.1400/3440.0.1440.2520@0.0.3440.1400" timestamp="1604463144038" />
-    <state width="1571" height="317" key="GridCell.Tab.0.center/0.0.3440.1400/3440.0.2560.1400@0.0.3440.1400" timestamp="1604524408975" />
-    <state width="1571" height="317" key="GridCell.Tab.0.left" timestamp="1604524408975">
-      <screen x="0" y="0" width="3440" height="1400" />
-    </state>
-    <state width="1674" height="400" key="GridCell.Tab.0.left/0.0.3440.1400/3440.0.1440.2520@0.0.3440.1400" timestamp="1604463144038" />
-    <state width="1571" height="317" key="GridCell.Tab.0.left/0.0.3440.1400/3440.0.2560.1400@0.0.3440.1400" timestamp="1604524408975" />
-    <state width="1571" height="317" key="GridCell.Tab.0.right" timestamp="1604524408975">
-      <screen x="0" y="0" width="3440" height="1400" />
-    </state>
-    <state width="1674" height="400" key="GridCell.Tab.0.right/0.0.3440.1400/3440.0.1440.2520@0.0.3440.1400" timestamp="1604463144038" />
-    <state width="1571" height="317" key="GridCell.Tab.0.right/0.0.3440.1400/3440.0.2560.1400@0.0.3440.1400" timestamp="1604524408975" />
-    <state width="1571" height="317" key="GridCell.Tab.1.bottom" timestamp="1604524408975">
-      <screen x="0" y="0" width="3440" height="1400" />
-    </state>
-    <state width="1674" height="218" key="GridCell.Tab.1.bottom/0.0.3440.1400/3440.0.1440.2520@0.0.3440.1400" timestamp="1604463073719" />
-    <state width="1571" height="317" key="GridCell.Tab.1.bottom/0.0.3440.1400/3440.0.2560.1400@0.0.3440.1400" timestamp="1604524408975" />
-    <state width="1571" height="317" key="GridCell.Tab.1.center" timestamp="1604524408975">
-      <screen x="0" y="0" width="3440" height="1400" />
-    </state>
-    <state width="1674" height="218" key="GridCell.Tab.1.center/0.0.3440.1400/3440.0.1440.2520@0.0.3440.1400" timestamp="1604463073719" />
-    <state width="1571" height="317" key="GridCell.Tab.1.center/0.0.3440.1400/3440.0.2560.1400@0.0.3440.1400" timestamp="1604524408975" />
-    <state width="1571" height="317" key="GridCell.Tab.1.left" timestamp="1604524408975">
-      <screen x="0" y="0" width="3440" height="1400" />
-    </state>
-    <state width="1674" height="218" key="GridCell.Tab.1.left/0.0.3440.1400/3440.0.1440.2520@0.0.3440.1400" timestamp="1604463073719" />
-    <state width="1571" height="317" key="GridCell.Tab.1.left/0.0.3440.1400/3440.0.2560.1400@0.0.3440.1400" timestamp="1604524408975" />
-    <state width="1571" height="317" key="GridCell.Tab.1.right" timestamp="1604524408975">
-      <screen x="0" y="0" width="3440" height="1400" />
-    </state>
-    <state width="1674" height="218" key="GridCell.Tab.1.right/0.0.3440.1400/3440.0.1440.2520@0.0.3440.1400" timestamp="1604463073719" />
-    <state width="1571" height="317" key="GridCell.Tab.1.right/0.0.3440.1400/3440.0.2560.1400@0.0.3440.1400" timestamp="1604524408975" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="ruby-line">
-          <url>file://$PROJECT_DIR$/prog3.rb</url>
-          <line>15</line>
-          <properties myBlockOrdinal="-1">
-            <option name="block-ordinal" value="-1" />
-          </properties>
-          <option name="timeStamp" value="29" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="ruby-line">
-          <url>file://$PROJECT_DIR$/dot_lexer.rb</url>
-          <line>27</line>
-          <properties myBlockOrdinal="-1">
-            <option name="block-ordinal" value="-1" />
-          </properties>
-          <option name="timeStamp" value="31" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <state width="2699" height="362" key="GridCell.Tab.0.right/0.0.3440.1400/3440.0.2560.1400@0.0.3440.1400" timestamp="1604708712438" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Program3@prog3.rcov" NAME="prog3 Coverage Results" MODIFIED="1604524408966" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Program3" />
-    <SUITE FILE_PATH="coverage/Program3@dot_lexer.rcov" NAME="dot_lexer Coverage Results" MODIFIED="1604454438284" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Program3" />
+    <SUITE FILE_PATH="coverage/Program3@prog3.rcov" NAME="prog3 Coverage Results" MODIFIED="1604708595310" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Program3" />
+    <SUITE FILE_PATH="coverage/Program3@test_dot_lexer_test.rcov" NAME="test_dot_lexer_test Coverage Results" MODIFIED="1604708712430" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Program3" />
+    <SUITE FILE_PATH="coverage/Program3@test_1.rcov" NAME="test_1 Coverage Results" MODIFIED="1604705824640" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Program3" />
   </component>
 </project>

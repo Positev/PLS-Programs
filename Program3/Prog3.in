@@ -1,1 +1,1 @@
-digraph trees {   subgraph t {     0 -> "1" [label = "A"];     0 -> "2" [label = "B"];   }   SUBGRAPH u {     Animal -> Ca#t [label = "feline"];     Animal -> Dog1 [label = "canine"];   } }
+digraph trees {   subgraph t {     0 -> "1" [label = "A"];     0 -> "2" [label = "B"];   }   SUBGRAPH u {     Animal -> Ca#&t [label = "feline"];     Animal -> Dog1 [label = "canine"];   } }

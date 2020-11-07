@@ -1,9 +1,9 @@
 require_relative 'token'
 class DotLexer
   @@regs = [ #https://regex101.com/ used heavily for this section for testing.
-      /^[a-zA-Z0-9]*$/, #ID => 1
-      /(^[0-9][0-9]?)/,                  #INT => 2
-      /("[^"]*?")/,           #STRING => 3
+      /^[a-zA-Z0-9]*$/,          #ID => 1
+      /(^[0-9][0-9]?)/,          #INT => 2
+      /("[^"]*?")/,              #STRING => 3
       /(\{)/,                    #LCURLY => 4
       /(\})/,                    #RCURLY => 5
       /(;)/,                     #SEMI => 6
@@ -14,7 +14,7 @@ class DotLexer
       /(DIGRAPH|digraph)/,       #DIGRAPH => 11
       /(SUBGRAPH|subgraph)/,     #SUBGRAPH => 12
       /(,)/,                     #COMMA => 13
-      /(\s)/                       #WS => 14
+      /(\s)/                     #WS => 14
   ]
 
   def initialize
@@ -25,10 +25,11 @@ class DotLexer
 
   def next_token
     token = @tokens[@cur_token]
-    @cur_token = @cur_token + 1
-    return token
+    @cur_token += 1
+    token
   end
 
+  # @return [String] with all text available in console, joined at line break
   def get_all_in_from_stdin
     ins = []
     input = gets
@@ -36,7 +37,7 @@ class DotLexer
       ins.push(input)
       input = gets
     end
-    return ins.join()
+    ins.join()
   end
 
   def make_tokens(all_text)
@@ -50,46 +51,53 @@ class DotLexer
     end
     list_of_token_texts = list_of_token_texts.reject{ |n| n.empty?}
     list_of_token_texts.each do |text|
-      make_token(text).each do |token|
-        tokens.push(token)
-      end
+      tokens.concat make_token(text)
+
     end
-    return tokens
+    tokens
   end
 
   def make_token(token_text)
     if is_token(token_text)
-      return [Token.new(token_text, get_token_type(token_text))]
+      [Token.new(token_text, get_token_type(token_text))]
     else
-      return handle_illegal_characters(token_text)
+      handle_illegal_characters(token_text)
     end
   end
 
+  # @param [String] token_text, text from the input that has not matched any categorization
+  # @return [List<Token>] - All invalid and valid tokens available in the provided TOKEN_TEXT
   def handle_illegal_characters(token_text)
-    tokens = []
-    last_invalid_char_index = 0
-    (1...token_text.length + 1 ).each do |sub_index|
-      sub_string =  token_text[last_invalid_char_index,sub_index]
-      if !is_token(sub_string)
-        valid_token = token_text[last_invalid_char_index,sub_index - 1]
-        tokens.push(Token.new(valid_token, get_token_type(valid_token) ))
-        tokens.push(Token.new(sub_string[sub_index-1], -1))
-        last_invalid_char_index = sub_index
+    
+    return [] if token_text.length == 0
+
+    return [Token.new(token_text, get_token_type(token_text))] if is_token(token_text)
+
+    (0...token_text.length).each do |index_under_evaluation|
+      sub_token = token_text[0, index_under_evaluation]
+      next if is_token(sub_token)
+
+      tokens = []
+      valid_text = token_text[0, index_under_evaluation - 1]
+      if valid_text.length > 0
+        valid_token = Token.new(valid_text, get_token_type(valid_text))
+        tokens.push(valid_token)
       end
-    end
-    last_token_text = token_text[last_invalid_char_index,token_text.length]
-    if(is_token(last_token_text))
-      tokens.push(Token.new(last_token_text, get_token_type(last_token_text)))
-    end
-    return tokens
+      invalid_text = token_text[index_under_evaluation - 1]
+      invalid_token = Token.new(invalid_text, -1)
+      tokens.push(invalid_token)
+      remaining_tokens = handle_illegal_characters(token_text[index_under_evaluation..-1])
+      return tokens.concat(remaining_tokens)
     end
 
+    end
+
+  # @param [String] text -> text that should be evaluated and categorized if applicable, true if text is valid token
+  # @return [Boolean] True if TEXT is a valid token
   def is_token(text)
     (0...@@regs.length - 1 ).reverse_each do |i|
       regex_pattern = @@regs[i]
-      if text.match regex_pattern
-        return true
-      end
+      return true if text.match regex_pattern
     end
     false
   end
@@ -97,9 +105,7 @@ class DotLexer
   def get_token_type(text)
     (0...@@regs.length - 1 ).reverse_each do |i|
       regex_pattern = @@regs[i]
-      if text.match regex_pattern
-        return i + 1
-      end
+      return i + 1 if text.match regex_pattern
     end
     false
   end
