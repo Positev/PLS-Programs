@@ -6,6 +6,8 @@ require_relative 'token'
 # output as a list of categorized lexical units.
 
 class DotLexer
+
+  #I hope you dont hate this as much as i do... but its super convenient :)
   @@regs = [ #https://regex101.com/ used heavily for this section for testing.
       /^[a-zA-Z0-9]*$/,          #ID => 1
       /(^[0-9][0-9]?)/,          #INT => 2
@@ -61,9 +63,9 @@ class DotLexer
     list_of_token_texts = []
     tokens = []
     unwanted_characters = /([\s+,\t+,\n+,\r+])/ # Characters that should be removed after splitting
-    regexp_for_split = Regexp.union(@@regs[2,13])
+    regexp_for_split = Regexp.union(@@regs[2,13]) #2 through 13 worked well for getting everything split by token type
     all_text.split(regexp_for_split).each do |text_segment|
-      possible_token = text_segment.gsub(unwanted_characters, '')
+      possible_token = text_segment.gsub(unwanted_characters, '') #remove unwanted characters... regex style
       list_of_token_texts.push(possible_token)
     end
     list_of_token_texts = list_of_token_texts.reject{ |n| n.empty?}

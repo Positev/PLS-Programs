@@ -7,6 +7,8 @@ class Token
 
   EOF = -2
   INVALID = -1
+  #Other token types would be delcared here, but they would never
+  # be used in my implementation. so i excluded them
 
   # build the Token object
   def initialize (text, id)
