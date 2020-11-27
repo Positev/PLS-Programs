@@ -5,7 +5,7 @@ require_relative "dot_lexer"
 require_relative "dot_parser"
 
 # Uncomment this line for debugging.
-#$stdin.reopen("Prog4.in")
+$stdin.reopen("Prog4.in")
 
 lexer = DotLexer.new
 
