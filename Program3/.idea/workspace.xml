@@ -45,6 +45,7 @@
     <property name="DefaultRubyCreateTestTemplate" value="MiniTest Template" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Program4" />
   </component>
   <component name="RunManager" selected="Ruby.prog3">
     <configuration name="prog3" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
@@ -142,6 +143,7 @@
       <updated>1604705092892</updated>
       <workItem from="1604705093927" duration="5531000" />
       <workItem from="1606337741848" duration="18000" />
+      <workItem from="1606513812601" duration="501000" />
     </task>
     <servers />
   </component>
@@ -161,6 +163,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="1500" y="455" key="FileChooserDialogImpl" timestamp="1606514316276">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="1500" y="455" key="FileChooserDialogImpl/0.0.3440.1400/3440.0.1440.2520@0.0.3440.1400" timestamp="1606514316276" />
     <state width="2178" height="328" key="GridCell.Tab.0.bottom" timestamp="1604710638081">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
@@ -180,7 +186,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Program3@test_dot_lexer_test.rcov" NAME="test_dot_lexer_test Coverage Results" MODIFIED="1604708712430" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Program3" />
-    <SUITE FILE_PATH="coverage/Program3@test_1.rcov" NAME="test_1 Coverage Results" MODIFIED="1604705824640" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Program3" />
     <SUITE FILE_PATH="coverage/Program3@prog3.rcov" NAME="prog3 Coverage Results" MODIFIED="1604710638075" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Program3" />
+    <SUITE FILE_PATH="coverage/Program3@test_1.rcov" NAME="test_1 Coverage Results" MODIFIED="1604705824640" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Program3" />
   </component>
 </project>

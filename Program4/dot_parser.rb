@@ -19,7 +19,6 @@ class DotParser
       @iterator.next.type == Token::LCURLY
     ]
 
-    print syntax_before_stmt_list_valid
 
     if  syntax_before_stmt_list_valid.all?
       @iterator.next
@@ -62,6 +61,8 @@ class DotParser
     end
 
     if @iterator.current.type == Token::ID and @iterator.next.type == Token::EQUALS and @iterator.next.type == Token::ID
+
+      @iterator.next
       puts "Finish recognizing a property"
       return true
     else
@@ -70,10 +71,12 @@ class DotParser
 
     if subgraph
       puts "Finish recognizing a property"
+
       return true
     else
       @iterator.current_index = restore_point
     end
+
 
     false
   end
@@ -89,28 +92,68 @@ class DotParser
     else exit(-1)
 
     end
+    @iterator.next
     edge
     edgeRHS
+
+    if
     puts "Finish recognizing an edge statement"
+
+    @iterator.next
     true
   end
 
   #edgeRHS -> (id | subgraph) {edge (id | subgraph)}
 
+
   def edgeRHS
 
+    def subgraph_or_id
+      if @iterator.current.type != Token::ID
+        restore_point = @iterator.current_index
+        unless subgraph
+          @iterator.current_index = restore_point
+          else return false
+        end
+      end
+    end
+
+    unless subgraph_or_id
+      return false
+    else
+      while edge and subgraph_or_id
+
+      end
+
+    end
+
+    @iterator.next
   end
 
   #edge -> '->' | '--'
 
   def edge
 
+    restore_point = @iterator.current_index
+    if @iterator.current.type != Token::ARROW
+      @iterator.current_index = restore_point
+      return false
+    end
+
+
+
+    @iterator.next
     true
   end
 
   #subgraph -> ('subgraph' | 'SUBGRAPH') [id] '{' {stmt_list} '}' id -> ID | STRING | INT
   def subgraph
     puts "Start recognizing a subgraph"
+    restore_point = @iterator.current_index
+    if @iterator.current.type == Token::ARROW
+      @iterator.current_index = restore_point
+      return false
+    end
     puts "Finish recognizing a subgraph"
     true
   end
