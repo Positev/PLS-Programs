@@ -29,6 +29,10 @@ class Token
     @type = id
   end
 
+  def is(type)
+    return @type == type
+  end
+
   # Serialize the token to a string, if the token is valid, thus type != -1, expect ['text':'type'].
   # Otherwise expect illegal char: #{@type}
   def to_s

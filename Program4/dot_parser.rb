@@ -10,152 +10,142 @@ class DotParser
   #graph -> ('digraph' | 'DIGRAPH') [id] '{' stmt_list '}'
 
   def graph
-    puts "Start recognizing a digraph"
-    token = @iterator.current
+    init('digraph')
+    restore_point = @iterator.current_index
 
     syntax_before_stmt_list_valid = [
-      token.type == Token::DIGRAPH,
+      @iterator.current.type == Token::DIGRAPH,
       @iterator.next.type == Token::ID,
       @iterator.next.type == Token::LCURLY
     ]
+    return fail(restore_point) unless syntax_before_stmt_list_valid.all?
+    return fail(restore_point) unless stmt_list
+    return fail(restore_point) unless @iterator.next.is(Token::RCURLY)
 
 
-    if  syntax_before_stmt_list_valid.all?
-      @iterator.next
-      stmt_list
-      if not @iterator.next.type == Token::RBRACK
-        exit(-1)
-      end
+    pass('digraph')
 
-  else
-    exit(-1)
-    end
   end
 
   #stmt_list -> {stmt [';']}
-
   def stmt_list
-    puts "Start recognizing a cluster"
 
-    while (@iterator.peek_next.type != Token::RBRACK)
-      stmt
-      if @iterator.next != Token::SEMI
-        exit(-1)
-      end
+    loop do
+      restore_point = init('cluster')
+
+      return fail(restore_point) unless stmt and @iterator.current.is(Token::SEMI)
+
     end
 
-    puts "Finish recognizing a cluster"
+    pass('cluster')
   end
 
   #stmt -> edge_stmt | id '=' id | subgraph
-
   def stmt
-    puts "Start recognizing a property"
 
-    restore_point = @iterator.current_index
-    if edge_stmt
-      puts "Finish recognizing a property"
-      return true
-    else
-      @iterator.current_index = restore_point
-    end
+    restore_point = init('property')
 
-    if @iterator.current.type == Token::ID and @iterator.next.type == Token::EQUALS and @iterator.next.type == Token::ID
-
-      @iterator.next
-      puts "Finish recognizing a property"
-      return true
-    else
-      @iterator.current_index = restore_point
-    end
-
-    if subgraph
-      puts "Finish recognizing a property"
-
-      return true
-    else
-      @iterator.current_index = restore_point
-    end
+    return pass('property') if edge_stmt
+    return pass('property') if [
+        @iterator.current.is(Token::ID),
+        @iterator.next.is(Token::EQUALS),
+        @iterator.next.is(Token::ID)
+    ].all?
+    return pass('property') if subgraph
 
 
-    false
+    fail(restore_point)
   end
 
   #edge_stmt -> (id | subgraph) edge edgeRHS ['['attr_list']'] attr_list -> id ['=' id] {',' id ['=' id]}
-
   def edge_stmt
-    puts "Start recognizing an edge statement"
-    if @iterator.current.type == Token::ID
 
-    elsif subgraph
+    restore_point = init('statement')
 
-    else exit(-1)
+    return fail(restore_point) unless @iterator.current.is(Token::ID) or subgraph
 
+    return fail(restore_point) unless edge
+
+    return fail(restore_point) unless edgeRHS
+
+    if @iterator.current.is(Token::LBRACK)
+      return fail(restore_point) unless attr_list and @iterator.current.is(Token::RBRACK)
     end
-    @iterator.next
-    edge
-    edgeRHS
 
-    if
-    puts "Finish recognizing an edge statement"
+    return fail(restore_point) unless [
+        attr_list,
+        @iterator.current.is(Token::ARROW),
+        @iterator.next.is(Token::ID)
+    ].all?
 
-    @iterator.next
-    true
+    return fail(restore_point) if @iterator.next.is(Token::EQUALS) and not @iterator.next.is(Token::ID)
+
+    loop do
+      break unless [@iterator.next.is(Token::COMMA), @iterator.next.is(Token::ID)].all?
+      break if @iterator.next.is(Token::EQUALS) and not @iterator.next.is(Token::ID)
+    end
+
+    restore_point = @iterator.current_index
+    fail(restore_point) unless
+
+    pass('statement')
   end
 
   #edgeRHS -> (id | subgraph) {edge (id | subgraph)}
-
-
   def edgeRHS
 
-    def subgraph_or_id
-      if @iterator.current.type != Token::ID
-        restore_point = @iterator.current_index
-        unless subgraph
-          @iterator.current_index = restore_point
-          else return false
-        end
-      end
-    end
 
-    unless subgraph_or_id
-      return false
-    else
-      while edge and subgraph_or_id
 
-      end
+    restore_point = init('')
 
-    end
+    return fail(restore_point) unless @iterator.current.is(Token::ID) or subgraph
 
-    @iterator.next
+    pass('')
   end
 
   #edge -> '->' | '--'
-
   def edge
+    restore_point = init('')
 
-    restore_point = @iterator.current_index
-    if @iterator.current.type != Token::ARROW
-      @iterator.current_index = restore_point
-      return false
+    pass('')
     end
 
+  #subgraph -> ('subgraph' | 'SUBGRAPH') [id] '{' {stmt_list} '}' id -> ID | STRING | INT
+  def subgraph
+    restore_point = init('subgraph')
+
+    pass('subgraph')
+  end
 
 
+
+
+  def fail(restore_point)
+    @iterator.current_index = restore_point
+    false
+  end
+
+  def is_vowel(word)
+    ['a','e','i','o','u'].include? word[0].downcase
+  end
+
+  def pass(rule)
+
+    if rule != ''
+      indef_art =  is_vowel(rule) ? 'a' : 'an'
+      puts "Finish recognizing #{indef_art} #{rule}"
+    end
     @iterator.next
     true
   end
 
-  #subgraph -> ('subgraph' | 'SUBGRAPH') [id] '{' {stmt_list} '}' id -> ID | STRING | INT
-  def subgraph
-    puts "Start recognizing a subgraph"
-    restore_point = @iterator.current_index
-    if @iterator.current.type == Token::ARROW
-      @iterator.current_index = restore_point
-      return false
+  def init(rule)
+    if rule != ''
+      indef_art =  is_vowel(rule) ? 'a' : 'an'
+      puts "Start recognizing #{indef_art} #{rule}"
     end
-    puts "Finish recognizing a subgraph"
-    true
+    @iterator.current_index
   end
+
 end
 
