@@ -25,6 +25,8 @@ class LexicalUnitIterator
   end
 
   def current
+
+    #puts "Current: #{@tokens[@current_index]}"
     @tokens[@current_index]
   end
 
@@ -34,6 +36,8 @@ class LexicalUnitIterator
     if can_advance
       @current_index += 1
     end
+
+    #puts "Next: #{@tokens[@current_index]}"
     can_advance ? @tokens[@current_index] : nil
   end
 
