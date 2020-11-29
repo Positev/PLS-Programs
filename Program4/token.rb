@@ -4,6 +4,7 @@
 
 class Token
   attr_accessor :type
+  attr_reader :text
 
   EOF = -2
   INVALID = -1

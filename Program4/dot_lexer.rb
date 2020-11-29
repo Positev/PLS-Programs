@@ -30,8 +30,8 @@ class DotLexer
   # Read in all text from the stdin, parse the text and make a list of tokens.
   # Add an end of file token after finished reading the input.
   # Initialize the iterator value to zero
-  def initialize
-    @tokens = make_tokens(get_all_in_from_stdin)
+  def initialize(input)
+    @tokens = make_tokens(input)
     @tokens.push(Token.new('', Token::EOF))
     @cur_token = 0
   end
