@@ -77,7 +77,7 @@ class DotParserTest < MiniTest::Test
     parser.clear_log()
 
     begin
-      parser.stmt()
+      parser.property()
     rescue SystemExit
     end
     out = parser.get_log
@@ -122,37 +122,6 @@ class DotParserTest < MiniTest::Test
 
   end
 
-    def test_cluster
-    expected_out = ['Start recognizing a cluster',
-                    'Start recognizing an edge statement',
-                    'Start recognizing a property',
-                    'Finish recognizing a property',
-                    'Finish recognizing an edge statement',
-                    'Start recognizing an edge statement',
-                    'Start recognizing a property',
-                    'Finish recognizing a property',
-                    'Finish recognizing an edge statement',
-                    'Finish recognizing a cluster']
-
-    input = '
-    0 -> "1" [label = "A"];
-    0 -> "2" [label = "B"];
-  '
-    lexer = DotLexer.new(input)
-
-    parser = DotParser.new(lexer)
-
-    parser.clear_log()
-
-
-
-
-  begin
-    parser.stmt_list()
-  rescue SystemExit
-  end
-    assert_equal( expected_out.join('\n'),parser.get_log)
-  end
 
   def test_edge_stmt
     expected_out = [
@@ -199,37 +168,6 @@ class DotParserTest < MiniTest::Test
 
     puts parser.get_log
     puts expected_out.join('\n')
-    assert_equal(parser.get_log, expected_out.join('\n'))
-  end
-
-  def test_cluster_1
-    expected_out = ['Start recognizing a cluster',
-                    'Start recognizing an edge statement',
-                    'Start recognizing a property',
-                    'Finish recognizing a property',
-                    'Finish recognizing an edge statement',
-                    'Start recognizing an edge statement',
-                    'Start recognizing a property',
-                    'Finish recognizing a property',
-                    'Finish recognizing an edge statement',
-                    'Finish recognizing a cluster']
-
-    input = '
-    0 -> "1" [label = "A"];
-    0 -> "2" [label = "B"];
-  '
-    lexer = DotLexer.new(input)
-
-    parser = DotParser.new(lexer)
-
-    parser.clear_log()
-
-
-
-    begin
-      parser.stmt_list()
-    rescue SystemExit
-    end
     assert_equal(parser.get_log, expected_out.join('\n'))
   end
 

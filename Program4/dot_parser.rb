@@ -54,13 +54,18 @@ class DotParser
         begin
           drop_breadcrumb
           stmt
+          if should_accept Token::SEMI
+            accept Token::SEMI
+          end
+
+          if should_accept Token::RCURLY
+            return
+          end
         rescue SyntaxError
           consume_breadcrumb
-          break
+          return
         end
-        if should_accept Token::SEMI
-          accept Token::SEMI
-        end
+
       end
     end
 
@@ -71,29 +76,35 @@ class DotParser
 
   #stmt -> edge_stmt | id '=' id | subgraph
   def stmt
-    begin
-      drop_breadcrumb
-      edge_stmt
-      return
-    rescue SyntaxError
-      consume_breadcrumb
+    def parse
+      begin
+        drop_breadcrumb
+        edge_stmt
+        return
+      rescue SyntaxError
+        consume_breadcrumb
+      end
+
+      begin
+        drop_breadcrumb
+        property
+        return
+      rescue SyntaxError
+        consume_breadcrumb
+      end
+
+      begin
+        drop_breadcrumb
+        subgraph
+        return
+      rescue SyntaxError
+        consume_breadcrumb
+      end
+
+      error('')
     end
 
-    begin
-      drop_breadcrumb
-      property
-      return
-    rescue SyntaxError
-      consume_breadcrumb
-    end
-
-    begin
-      drop_breadcrumb
-      subgraph
-      return
-    rescue SyntaxError
-      consume_breadcrumb
-    end
+    parse
   end
 
   # id = id
@@ -130,27 +141,30 @@ class DotParser
 
   #attr_list -> id ['=' id] {',' id ['=' id]}
   def attr_list
-    accept Token::ID
+    def parse
+      accept Token::ID
 
-    if should_accept Token::EQUALS
-      @iterator.prev
-      property
-    end
+      if should_accept Token::EQUALS
+        @iterator.prev
+        property
+      end
 
-    loop do
-      begin
-        drop_breadcrumb
-        accept Token::COMMA
-        id
-        if should_accept Token::EQUALS
-          accept Token::Equals
+      loop do
+        begin
+          drop_breadcrumb
+          accept Token::COMMA
           id
+          if should_accept Token::EQUALS
+            accept Token::Equals
+            id
+          end
+        rescue SyntaxError
+          consume_breadcrumb
+          return
         end
-      rescue SyntaxError
-        consume_breadcrumb
-        return
       end
     end
+    parse
   end
 
   #edgeRHS -> (id | subgraph) {edge (id | subgraph)}
@@ -184,7 +198,17 @@ class DotParser
         consume_breadcrumb
       end
       accept Token::LCURLY
-      stmt_list
+      loop do
+        begin
+          drop_breadcrumb
+          stmt_list
+          if should_accept Token::RCURLY
+            break
+          end
+        rescue SyntaxError
+          consume_breadcrumb
+        end
+      end
       accept Token::RCURLY
       return true
     end
