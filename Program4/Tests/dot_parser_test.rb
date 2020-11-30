@@ -68,7 +68,7 @@ class DotParserTest < MiniTest::Test
 
   def test_property
 
-    expected_out = 'Start recognizing a property\nFinish recognizing a property'
+    expected_out = ['Start recognizing a property','Finish recognizing a property']
 
     input = 'rankdir=LR;'
     lexer = DotLexer.new(input)
@@ -81,7 +81,7 @@ class DotParserTest < MiniTest::Test
     rescue SystemExit
     end
     out = parser.get_log
-    assert_equal(out, expected_out)
+    assert_equal(expected_out.join('\n'), out )
 
   end
 
@@ -177,6 +177,28 @@ class DotParserTest < MiniTest::Test
     assert_equal(parser.get_log, expected_out.join('\n'))
   end
 
+  def test_ideqid
+    expected_out = ['Start recognizing a property',
+                    'Finish recognizing a property',]
+
+    input = '
+    label = "A"
+  '
+    lexer = DotLexer.new(input)
+
+    parser = DotParser.new(lexer)
+
+    parser.clear_log()
+
+
+
+    begin
+      parser.property()
+    rescue SystemExit
+    end
+    assert_equal(parser.get_log, expected_out.join('\n'))
+  end
+
   def test_cluster_1
     expected_out = ['Start recognizing a cluster',
                     'Start recognizing an edge statement',
@@ -200,12 +222,12 @@ class DotParserTest < MiniTest::Test
     parser.clear_log()
 
 
-    assert_equal(parser.get_log, expected_out.join('\n'))
 
     begin
       parser.stmt_list()
     rescue SystemExit
     end
+    assert_equal(parser.get_log, expected_out.join('\n'))
   end
 
 end
