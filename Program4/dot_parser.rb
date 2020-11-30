@@ -21,6 +21,7 @@ class DotParser
   end
 
   def log (str)
+    puts str
     $log.push(str.chomp)
   end
 
@@ -249,6 +250,10 @@ class DotParser
     end
 
     if not either
+      allowed_to_fail do
+        subgraph
+        
+      end
       begin
         drop_breadcrumb
         subgraph
@@ -257,6 +262,16 @@ class DotParser
         consume_breadcrumb
       end
     end
+  end
+
+  def allowed_to_fail
+    begin
+      drop_breadcrumb
+      yield
+    rescue  SyntaxError
+      consume_breadcrumb
+    end
+
   end
 
   def error(msg)
@@ -279,7 +294,7 @@ class DotParser
 
       lex
     else
-      error "Error parsing #{@iterator.peek_next}"
+      error "Error parsing #{@iterator.peek_next}, Expecting #{type}"
     end
   end
 
