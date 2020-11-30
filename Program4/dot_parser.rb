@@ -17,6 +17,7 @@ class DotParser
   def initialize(lexer)
     super()
     @iterator = LexicalUnitIterator.new(lexer)
+    @restore_point = 0
   end
 
   def log (str)
@@ -26,275 +27,240 @@ class DotParser
   #graph -> ('digraph' | 'DIGRAPH') [id] '{' stmt_list '}'
 
   def graph
-    init('digraph')
-
-    if @iterator.current.is(Token::DIGRAPH)
-      @iterator.next
-    else
-
-      fail_and_exit("Expected digraph but found #{@iterator.current.text}")
-
+    def parse
+      accept Token::DIGRAPH
+      begin
+        drop_breadcrumb
+        id
+      rescue SyntaxError
+        consume_breadcrumb
+      end
+      if should_accept(Token::LCURLY)
+        accept Token::LCURLY
+        stmt_list
+        accept Token::RCURLY
+      end
     end
 
-    if id(true)
-      @iterator.next
-    end
-
-    if @iterator.peek_next.is(Token::LCURLY)
-      @iterator.next
-    else
-      fail_and_exit("Expected { but found #{@iterator.current.text}")
-    end
-
-    stmt_list
-
-    if @iterator.peek_next.is(Token::RCURLY)
-      @iterator.next
-    else
-      fail_and_exit("Expected } but found #{@iterator.current.text}")
-    end
-
-    pass('digraph')
+    log "Start recognizing a digraph"
+    output = parse
+    log "Finish recognizing a digraph"
   end
 
   #stmt_list -> {stmt [';']}
   def stmt_list
-    restore_point = init('cluster')
-
-    while true
-      if stmt
-        if (@iterator.current.is(Token::SEMI))
-          @iterator.next
-        else
-          fail_and_exit("Expected ; but found #{@iterator.current.text}")
+    def parse
+      loop do
+        begin
+          drop_breadcrumb
+          stmt
+        rescue SyntaxError
+          consume_breadcrumb
+          break
         end
-      else
-        break
+        if should_accept Token::SEMI
+          accept Token::SEMI
+        end
       end
     end
 
-    pass('cluster')
+    log "Start recognizing a cluster"
+    output = parse
+    log "Finish recognizing a cluster"
   end
 
   #stmt -> edge_stmt | id '=' id | subgraph
   def stmt
+    begin
+      drop_breadcrumb
+      edge_stmt
+      return
+    rescue SyntaxError
+      consume_breadcrumb
+    end
 
-    if id and property
-    elsif edge_stmt
-      return true
-    elsif @iterator.peek_next.is(Token::SUBGRAPH)
-      if subgraph
-        return true
-      end
-    else
-      fail_and_exit('')
+    begin
+      drop_breadcrumb
+      property
+      return
+    rescue SyntaxError
+      consume_breadcrumb
+    end
+
+    begin
+      drop_breadcrumb
+      subgraph
+      return
+    rescue SyntaxError
+      consume_breadcrumb
     end
   end
 
-
+  # id = id
   def property
-    if id
-      init('property')
-      if (@iterator.next.is(Token::EQUALS))
-        @iterator.next
-        if id
-          pass('property')
-          return true
-        else
-          fail_and_exit("Expected ID but found #{@iterator.current.text}")
-        end
-      else
-        return false
-      end
-    else
-      return false
-      end
-
-    return true
+    def parse
+      id
+      accept Token::EQUALS
+      id
     end
 
-    #edge_stmt -> (id | subgraph) edge edgeRHS ['['attr_list']']
-
-  def possibly_edge_stmt
-      if id
-      elsif @iterator.current.is(Token::SUBGRAPH)
-      else
-        return false
-      end
-      true
+    log "Start recognizing a property"
+    output = parse
+    log "Finish recognizing a property"
   end
 
-    def edge_stmt
-
-      if id(true)
-        @iterator.next
-        init('edge statement')
-      elsif @iterator.peek_next.is(Token::SUBGRAPH)
-        init('edge statement')
-        subgraph
-      else
-        return false
-      end
-
+  #edge_stmt -> (id | subgraph) edge edgeRHS ['['attr_list']']
+  def edge_stmt
+    def parse
+      id_or_subgraph
       edge
       edgeRHS
-
-      if @iterator.current.is(Token::LBRACK)
-        @iterator.next
+      if should_accept Token::LBRACK
+        accept Token::LBRACK
         attr_list
-        if not @iterator.current.is(Token::RBRACK)
-          fail_and_exit("Expected ] but found #{@iterator.current.text}")
-        end
+        accept Token::RBRACK
       end
-
-      pass('edge statement')
     end
 
-
-    #attr_list -> id ['=' id] {',' id ['=' id]}
-    def attr_list
-      restore_point = init('')
-
-      if id and @iterator.peek_next.is(Token::EQUALS)
-
-        stmt
-      elsif id
-        @iterator.next
-      end
+    log "Start recognizing an edge statement"
+    output = parse
+    log "Finish recognizing an edge statement"
+  end
 
 
-      while @iterator.peek_next.is(Token::COMMA)
+  #attr_list -> id ['=' id] {',' id ['=' id]}
+  def attr_list
+    accept Token::ID
 
-        if id and @iterator.peek_next.is(Token::EQUALS)
-          stmt
-        elsif id
-          @iterator.next
-        else
-          fail_and_exit("msg 157")
-        end
-
-      end
-
-      true
+    if should_accept Token::EQUALS
+      @iterator.prev
+      property
     end
 
-    #edgeRHS -> (id | subgraph) {edge (id | subgraph)}
-    def edgeRHS
-      restore_point = init('')
-
-      if id(true)
-        @iterator.next
-      elsif @iterator.peek_next.is(Token::SUBGRAPH)
-        subgraph
-      else
-        fail_and_exit("")
+    loop do
+      begin
+        drop_breadcrumb
+        accept Token::COMMA
+        id
+        if should_accept Token::EQUALS
+          accept Token::Equals
+          id
+        end
+      rescue SyntaxError
+        consume_breadcrumb
+        return
       end
+    end
+  end
 
-      while @iterator.peek_next.is(Token::ARROW)
+  #edgeRHS -> (id | subgraph) {edge (id | subgraph)}
+  def edgeRHS
+    id_or_subgraph
+    loop do
+      begin
+        drop_breadcrumb
         edge
-
-        if id(true)
-          @iterator.next
-        elsif @iterator.peek_next.is(Token::SUBGRAPH)
-          subgraph
-        else
-          fail_and_exit("")
-        end
-
+        id_or_subgraph
+      rescue SyntaxError
+        consume_breadcrumb
+        return
       end
-
-      true
     end
+  end
 
-    #edge -> '->' | '--'
-    def edge
-      restore_point = init('')
+  #edge -> '->' | '--'
+  def edge
+    accept(Token::ARROW)
+  end
 
-      if not @iterator.current.is(Token::ARROW)
-        fail_and_exit("Expected -> but got #{@iterator.peek_next.text}")
+  #subgraph -> ('subgraph' | 'SUBGRAPH') [id] '{' {stmt_list} '}'
+  def subgraph
+    def parse
+      accept Token::SUBGRAPH
+      begin
+        drop_breadcrumb
+        id
+      rescue SyntaxError
+        consume_breadcrumb
       end
-
-      pass('')
-    end
-
-    #subgraph -> ('subgraph' | 'SUBGRAPH') [id] '{' {stmt_list} '}'
-    def subgraph
-      restore_point = init('subgraph')
-
-      if @iterator.peek_next.is(Token::SUBGRAPH)
-        @iterator.next
-      else
-        fail_and_exit("Expected subgraph but found #{@iterator.current.text}")
-      end
-
-      if id(true)
-        @iterator.next
-      end
-
-      if @iterator.peek_next.is(Token::LCURLY)
-        @iterator.next
-      else
-        fail_and_exit("Expected { but found #{@iterator.current.text}")
-      end
-
+      accept Token::LCURLY
       stmt_list
+      accept Token::RCURLY
+      return true
+    end
 
-      if @iterator.peek_next.is(Token::RCURLY)
-        @iterator.next
-      else
-        fail_and_exit("Expected } but found #{@iterator.current.text}")
+    log "Start recognizing a subgraph"
+    output = parse
+    log "Finish recognizing a subgraph"
+  end
+
+  #id -> ID | STRING | INT
+  def id()
+    accepted = [Token::ID, Token::STRING, Token::INT]
+    accepted.each do |type|
+      if should_accept(type)
+        lex
+        return
+
       end
-
-
-      pass('subgraph')
     end
-
-    #id -> ID | STRING | INT
-    def id(soft = false)
-      if @iterator.current.is(Token::ID)
-      elsif @iterator.current.is(Token::STRING)
-      elsif @iterator.current.is(Token::INT)
-      else
-        if soft
-          return false
-        else
-          fail_and_exit('')
-        end
-      end
-      true
-    end
-
-    def fail_and_exit(msg)
-      log msg
-      exit()
-    end
-
-    def fail_and_restore(restore_point)
-      @iterator.current_index = restore_point
-      false
-    end
-
-    def is_vowel(word)
-      ['a', 'e', 'i', 'o', 'u'].include? word[0].downcase
-    end
-
-    def pass(rule)
-
-      if rule != ''
-        indef_art = is_vowel(rule) ? 'an' : 'a'
-        log "Finish recognizing #{indef_art} #{rule}"
-      end
-      @iterator.next
-      true
-    end
-
-    def init(rule)
-      if rule != ''
-        indef_art = is_vowel(rule) ? 'an' : 'a'
-        log "Start recognizing #{indef_art} #{rule}"
-      end
-      @iterator.current_index
-    end
+    error("Expecting Id String or Int but found #{@iterator.peek_next.text}")
 
   end
+
+
+  def id_or_subgraph
+    either = false
+    begin
+      drop_breadcrumb
+      id
+      either = true
+    rescue SyntaxError
+      consume_breadcrumb
+    end
+
+    if not either
+      begin
+        drop_breadcrumb
+        subgraph
+        either = true
+      rescue SyntaxError
+        consume_breadcrumb
+      end
+    end
+  end
+
+  def error(msg)
+    puts msg
+    raise SyntaxError
+  end
+
+  def consume_breadcrumb
+    puts("Consuming breadcrumb #{@restore_point}")
+    @iterator.current_index = @restore_point
+  end
+
+  def drop_breadcrumb
+    puts("Dropping breadcrumb #{ @iterator.current_index}")
+    @restore_point = @iterator.current_index
+  end
+
+  def accept(type)
+    if should_accept(type)
+      lex
+    else
+      error "Error parsing #{@iterator.peek_next}"
+    end
+  end
+
+  def should_accept(type)
+    return @iterator.peek_next.is(type)
+  end
+
+  def lex()
+    @iterator.next
+  end
+
+
+end
 

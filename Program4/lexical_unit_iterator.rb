@@ -7,7 +7,7 @@ class LexicalUnitIterator
   def initialize(lexer)
     super()
     @tokens = lexer.all_tokens
-    @current_index = 0
+    @current_index = -1
   end
 
   def peek_next

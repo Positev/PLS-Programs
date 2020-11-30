@@ -62,7 +62,7 @@ class DotParserTest < MiniTest::Test
       end
 
     out = parser.get_log
-    assert_equal(out, expected_out.join('\n'))
+    assert_equal( expected_out.join('\n'), out)
 
   end
 
@@ -113,7 +113,7 @@ class DotParserTest < MiniTest::Test
     parser.clear_log()
 
     begin
-      parser.graph()
+      parser.subgraph()
     rescue SystemExit
     end
 
@@ -146,12 +146,12 @@ class DotParserTest < MiniTest::Test
 
 
 
-    assert_equal(parser.get_log, expected_out.join('\n'))
 
   begin
     parser.stmt_list()
   rescue SystemExit
   end
+    assert_equal( expected_out.join('\n'),parser.get_log)
   end
 
   def test_edge_stmt
@@ -196,6 +196,9 @@ class DotParserTest < MiniTest::Test
       parser.property()
     rescue SystemExit
     end
+
+    puts parser.get_log
+    puts expected_out.join('\n')
     assert_equal(parser.get_log, expected_out.join('\n'))
   end
 
