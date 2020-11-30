@@ -43,6 +43,6 @@ class LexicalUnitIterator
 
   # @param [Object] index
   def in_range(index)
-    index >= 0 and index < @tokens.length
+    index >= -1 and index < @tokens.length
   end
 end

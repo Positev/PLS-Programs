@@ -142,21 +142,26 @@ class DotParser
   #attr_list -> id ['=' id] {',' id ['=' id]}
   def attr_list
     def parse
-      accept Token::ID
+      id
 
       if should_accept Token::EQUALS
         @iterator.prev
         property
       end
 
-      loop do
+      while should_accept Token::COMMA
+
         begin
           drop_breadcrumb
           accept Token::COMMA
           id
+
           if should_accept Token::EQUALS
-            accept Token::Equals
-            id
+            @iterator.prev
+            property
+          end
+          if should_accept Token::RBRACK
+            return
           end
         rescue SyntaxError
           consume_breadcrumb
@@ -271,6 +276,7 @@ class DotParser
 
   def accept(type)
     if should_accept(type)
+
       lex
     else
       error "Error parsing #{@iterator.peek_next}"
@@ -283,6 +289,7 @@ class DotParser
 
   def lex()
     @iterator.next
+    puts "Next #{@iterator.current}"
   end
 
 

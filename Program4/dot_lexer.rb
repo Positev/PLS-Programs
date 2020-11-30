@@ -66,8 +66,8 @@ class DotLexer
   def make_tokens(all_text)
     list_of_token_texts = []
     tokens = []
-    unwanted_characters = /([\s+,\t+,\n+,\r+])/ # Characters that should be removed after splitting
-    regexp_for_split = Regexp.union(@@regs[2,13]) #2 through 13 worked well for getting everything split by token type
+    unwanted_characters = /([\s|\t|\n|\r])/ # Characters that should be removed after splitting
+    regexp_for_split = Regexp.union(@@regs[2,15]) #2 through 13 worked well for getting everything split by token type
     all_text.split(regexp_for_split).each do |text_segment|
       possible_token = text_segment.gsub(unwanted_characters, '') #remove unwanted characters... regex style
       list_of_token_texts.push(possible_token)
