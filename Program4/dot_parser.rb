@@ -10,7 +10,9 @@ class DotParser
   end
 
   def get_log()
-    puts $log.join('\n')
+    $log.each do |m|
+      puts m
+    end
     return $log.join('\n')
   end
 
@@ -18,6 +20,7 @@ class DotParser
     super()
     @iterator = LexicalUnitIterator.new(lexer)
     @restore_point = 0
+    @log_save = []
   end
 
   def log (str)
@@ -78,34 +81,47 @@ class DotParser
   #stmt -> edge_stmt | id '=' id | subgraph
   def stmt
     def parse
-      begin
-        drop_breadcrumb
-        edge_stmt
-        return
-      rescue SyntaxError
-        consume_breadcrumb
-      end
 
-      begin
-        drop_breadcrumb
-        property
-        return
+      drop_breadcrumb
+      begin id
+        #edge or property
+        if should_accept Token::EQUALS
+          consume_breadcrumb
+          property
+          return
+        else
+          consume_breadcrumb
+          edge_stmt
+          return
+        end
       rescue SyntaxError
-        consume_breadcrumb
-      end
-
-      begin
-        drop_breadcrumb
-        subgraph
-        return
-      rescue SyntaxError
-        consume_breadcrumb
+        if should_accept Token::SUBGRAPH
+          #edge or subgraph
+          @iterator.next
+          hasID = false
+          begin
+            id
+            hasID = true
+          rescue
+            end
+            if hasID and should_accept Token::LCURLY
+              consume_breadcrumb
+              subgraph
+              return
+            else
+              consume_breadcrumb
+              edge_stmt
+              return
+            end
+          end
       end
 
       error('')
     end
 
+    puts "Enter Stmt"
     parse
+    puts "Exit Stmt"
   end
 
   # id = id
@@ -124,6 +140,7 @@ class DotParser
   #edge_stmt -> (id | subgraph) edge edgeRHS ['['attr_list']']
   def edge_stmt
     def parse
+
       id_or_subgraph
       edge
       edgeRHS
@@ -175,6 +192,7 @@ class DotParser
 
   #edgeRHS -> (id | subgraph) {edge (id | subgraph)}
   def edgeRHS
+    def parse
     id_or_subgraph
     loop do
       begin
@@ -186,11 +204,18 @@ class DotParser
         return
       end
     end
+    end
+
+    puts "Enter EDGE RHS"
+    parse
+    puts "Exit EDGE RHS"
   end
 
   #edge -> '->' | '--'
   def edge
+    puts "Enter Edge "
     accept(Token::ARROW)
+    puts "Exit Edge "
   end
 
   #subgraph -> ('subgraph' | 'SUBGRAPH') [id] '{' {stmt_list} '}'
@@ -225,7 +250,7 @@ class DotParser
   end
 
   #id -> ID | STRING | INT
-  def id()
+  def id
     accepted = [Token::ID, Token::STRING, Token::INT]
     accepted.each do |type|
       if should_accept(type)
@@ -250,10 +275,6 @@ class DotParser
     end
 
     if not either
-      allowed_to_fail do
-        subgraph
-        
-      end
       begin
         drop_breadcrumb
         subgraph
@@ -262,6 +283,8 @@ class DotParser
         consume_breadcrumb
       end
     end
+
+    return either
   end
 
   def allowed_to_fail
@@ -271,7 +294,7 @@ class DotParser
     rescue  SyntaxError
       consume_breadcrumb
     end
-
+    z
   end
 
   def error(msg)
@@ -282,11 +305,13 @@ class DotParser
   def consume_breadcrumb
     puts("Consuming breadcrumb #{@restore_point}")
     @iterator.current_index = @restore_point
+    $log = @log_save.map(&:clone)
   end
 
   def drop_breadcrumb
     puts("Dropping breadcrumb #{ @iterator.current_index}")
     @restore_point = @iterator.current_index
+    @log_save = $log.map(&:clone)
   end
 
   def accept(type)
@@ -304,7 +329,7 @@ class DotParser
 
   def lex()
     @iterator.next
-    puts "Next #{@iterator.current}"
+    #puts "Next #{@iterator.current}"
   end
 
 

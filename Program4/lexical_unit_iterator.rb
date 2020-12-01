@@ -14,6 +14,10 @@ class LexicalUnitIterator
     in_range(@current_index + 1) ? @tokens[@current_index + 1] : nil
   end
 
+  def look_ahead(n)
+    return @tokens[@current_index + n]
+  end
+
 
 
   def prev
