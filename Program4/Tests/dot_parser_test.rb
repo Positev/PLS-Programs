@@ -166,7 +166,7 @@ class DotParserTest < MiniTest::Test
     parser.clear_log()
 
     begin
-      parser.stmt_list()
+      parser.stmt()
     rescue SystemExit
     end
 
