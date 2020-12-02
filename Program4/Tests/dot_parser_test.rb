@@ -361,6 +361,55 @@ execute -> compare;
   end
 
 
+  def test_error_2
+    input = 'digraph G {
+    main -> parse -> execute;
+    main -> init;
+    main -> cleanup;
+    execute -> makeString;
+    execute -> printf
+    init -> makeString;
+    main -> printf;
+    execute -> compare;
+}'
+
+
+
+    expected_out = [
+        'Start recognizing a digraph',
+        'Start recognizing a cluster',
+        'Start recognizing an edge statement',
+        'Finish recognizing an edge statement',
+        'Start recognizing an edge statement',
+        'Finish recognizing an edge statement',
+        'Start recognizing an edge statement',
+        'Finish recognizing an edge statement',
+        'Start recognizing an edge statement',
+        'Finish recognizing an edge statement',
+        'Start recognizing an edge statement',
+        'Error: expecting ; or edge, but found: init',
+    ]
+
+
+
+
+    lexer = DotLexer.new(input)
+
+    parser = DotParser.new(lexer)
+
+    parser.clear_log()
+
+
+
+    begin
+      parser.graph()
+    rescue SystemExit
+    end
+
+    puts parser.get_log
+    puts expected_out.join('\n')
+    assert_equal(parser.get_log, expected_out.join('\n'))
+  end
 
 
 end
