@@ -5,10 +5,14 @@ $log = []
 
 
 class DotParser
+
+  # Created to facilitate unit testing. Clear the global log list
   def clear_log()
     $log = []
   end
 
+  # Created to facilitate unit testing. get the global log list, also print each element of the
+  # log list to provide output for the grader
   def get_log()
     $log.each do |m|
       puts m
@@ -16,6 +20,8 @@ class DotParser
     return $log.join('\n')
   end
 
+  #give the lexer to the iterator, create a default restore point and a log stash to restore incase traveling
+  # down a bad path.
   def initialize(lexer)
     super()
     @iterator = LexicalUnitIterator.new(lexer)
@@ -29,7 +35,6 @@ class DotParser
   end
 
   #graph -> ('digraph' | 'DIGRAPH') [id] '{' stmt_list '}'
-
   def graph
     def parse
       accept Token::DIGRAPH
@@ -47,7 +52,7 @@ class DotParser
     end
 
     log "Start recognizing a digraph"
-    output = parse
+    parse
     log "Finish recognizing a digraph"
   end
 
@@ -74,13 +79,12 @@ class DotParser
     end
 
     log "Start recognizing a cluster"
-    output = parse
+    parse
     log "Finish recognizing a cluster"
   end
 
   #stmt -> edge_stmt | id '=' id | subgraph
   def stmt
-    def parse
 
       drop_breadcrumb
       begin id
@@ -116,12 +120,11 @@ class DotParser
           end
       end
 
-      error('')
-    end
-
-    puts "Enter Stmt"
-    parse
-    puts "Exit Stmt"
+      if should_accept Token::LCURLY
+        error "property, edge or subgraph", '{'
+      else
+        error ''
+        end
   end
 
   # id = id
@@ -142,6 +145,7 @@ class DotParser
     def parse
 
       id_or_subgraph
+
       edge
       edgeRHS
       if should_accept Token::LBRACK
@@ -149,17 +153,19 @@ class DotParser
         attr_list
         accept Token::RBRACK
       end
+      if not (should_accept Token::SEMI or should_accept Token::ARROW)
+        error(expected = '; or edge', found = @iterator.next.text)
+      end
     end
 
     log "Start recognizing an edge statement"
-    output = parse
+    parse
     log "Finish recognizing an edge statement"
   end
 
 
   #attr_list -> id ['=' id] {',' id ['=' id]}
   def attr_list
-    def parse
       id
 
       if should_accept Token::EQUALS
@@ -186,36 +192,32 @@ class DotParser
           return
         end
       end
-    end
-    parse
   end
 
-  #edgeRHS -> (id | subgraph) {edge (id | subgraph)}
+  #edgeRHS -> (id | subgraph) {edge (id | subgraph)};
   def edgeRHS
-    def parse
     id_or_subgraph
     loop do
       begin
         drop_breadcrumb
         edge
         id_or_subgraph
+
       rescue SyntaxError
         consume_breadcrumb
         return
       end
     end
-    end
-
-    puts "Enter EDGE RHS"
-    parse
-    puts "Exit EDGE RHS"
   end
 
   #edge -> '->' | '--'
   def edge
-    puts "Enter Edge "
-    accept(Token::ARROW)
-    puts "Exit Edge "
+    begin
+      drop_breadcrumb
+      accept(Token::ARROW)
+    rescue
+      consume_breadcrumb
+      end
   end
 
   #subgraph -> ('subgraph' | 'SUBGRAPH') [id] '{' {stmt_list} '}'
@@ -243,6 +245,7 @@ class DotParser
       accept Token::RCURLY
       return true
     end
+
 
     log "Start recognizing a subgraph"
     output = parse
@@ -287,29 +290,23 @@ class DotParser
     return either
   end
 
-  def allowed_to_fail
-    begin
-      drop_breadcrumb
-      yield
-    rescue  SyntaxError
-      consume_breadcrumb
-    end
-    z
-  end
 
-  def error(msg)
-    puts msg
+  def error(expecting = '', found = '')
+    if expecting != '' and found != ''
+      log "Error: expecting #{expecting}, but found: #{found}"
+      exit(0)
+    end
     raise SyntaxError
   end
 
+
+
   def consume_breadcrumb
-    puts("Consuming breadcrumb #{@restore_point}")
     @iterator.current_index = @restore_point
     $log = @log_save.map(&:clone)
   end
 
   def drop_breadcrumb
-    puts("Dropping breadcrumb #{ @iterator.current_index}")
     @restore_point = @iterator.current_index
     @log_save = $log.map(&:clone)
   end
@@ -321,6 +318,10 @@ class DotParser
     else
       error "Error parsing #{@iterator.peek_next}, Expecting #{type}"
     end
+  end
+
+  def is_vowel(word)
+    ['a', 'e', 'i', 'o', 'u'].include? word[0].downcase
   end
 
   def should_accept(type)

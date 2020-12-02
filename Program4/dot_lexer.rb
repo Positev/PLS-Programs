@@ -30,7 +30,7 @@ class DotLexer
   # Read in all text from the stdin, parse the text and make a list of tokens.
   # Add an end of file token after finished reading the input.
   # Initialize the iterator value to zero
-  def initialize(input)
+  def initialize( input = get_all_in_from_stdin)
     @tokens = make_tokens(input)
     @tokens.push(Token.new('', Token::EOF))
     @cur_token = 0
@@ -57,6 +57,7 @@ class DotLexer
       input = gets
     end
     ins.join()
+
   end
 
   # Take in a string of text, split it into a set of tokens and non-tokens using the union of the lower 12 regex
