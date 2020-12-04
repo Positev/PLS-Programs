@@ -121,7 +121,7 @@ class DotParser
       end
 
       if should_accept Token::LCURLY
-        error "property, edge or subgraph", '{'
+        error expeted = "property, edge or subgraph", found = @iterator.next.text
       else
         error ''
         end
