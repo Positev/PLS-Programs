@@ -12,10 +12,10 @@ import org.antlr.v4.runtime.tree.TerminalNode;
 public class DOTBaseListener implements DOTListener {
 
 	private void enter(String article, String name){
-		System.out.printf("Started recognizing %s %s\n", article, name);
+		System.out.printf("Start recognizing %s %s\n", article, name);
 	}
 	private void exit(String article, String name){
-		System.out.printf("Finished recognizing %s %s\n", article, name);
+		System.out.printf("Finish recognizing %s %s\n", article, name);
 	}
 	/**
 	 * {@inheritDoc}
@@ -24,7 +24,7 @@ public class DOTBaseListener implements DOTListener {
 	 */
 	@Override public void enterGraph(DOTParser.GraphContext ctx) {
 
-		enter("a", "Digraph");
+		enter("a", "digraph");
 
 	}
 	/**
@@ -34,27 +34,36 @@ public class DOTBaseListener implements DOTListener {
 	 */
 	@Override public void exitGraph(DOTParser.GraphContext ctx) {
 
-		exit("a", "Digraph");
+		exit("a", "digraph");
 	}
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterStmt_list(DOTParser.Stmt_listContext ctx) { }
+	@Override public void enterStmt_list(DOTParser.Stmt_listContext ctx) {
+		enter("a", "cluster");
+	}
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitStmt_list(DOTParser.Stmt_listContext ctx) { }
+	@Override public void exitStmt_list(DOTParser.Stmt_listContext ctx) {
+
+		exit("a", "cluster");
+	}
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void enterStmt(DOTParser.StmtContext ctx) {
-
+		ctx.children.forEach((child)->{
+			if(child.toString().equals("=")){
+				enter("a", "property");
+			}
+		});
 	}
 	/**
 	 * {@inheritDoc}
@@ -62,14 +71,20 @@ public class DOTBaseListener implements DOTListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitStmt(DOTParser.StmtContext ctx) {
-
+		ctx.children.forEach((child)->{
+			if(child.toString().equals("=")){
+				exit("a", "property");
+			}
+		});
 	}
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAttr_stmt(DOTParser.Attr_stmtContext ctx) { }
+	@Override public void enterAttr_stmt(DOTParser.Attr_stmtContext ctx) {
+
+	}
 	/**
 	 * {@inheritDoc}
 	 *
@@ -81,7 +96,9 @@ public class DOTBaseListener implements DOTListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAttr_list(DOTParser.Attr_listContext ctx) { }
+	@Override public void enterAttr_list(DOTParser.Attr_listContext ctx) {
+
+	}
 	/**
 	 * {@inheritDoc}
 	 *
@@ -93,31 +110,42 @@ public class DOTBaseListener implements DOTListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterA_list(DOTParser.A_listContext ctx) { }
+	@Override public void enterA_list(DOTParser.A_listContext ctx) {
+
+		enter("a", "property");
+	}
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitA_list(DOTParser.A_listContext ctx) { }
+	@Override public void exitA_list(DOTParser.A_listContext ctx) {
+
+		exit("a", "property");
+	}
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterEdge_stmt(DOTParser.Edge_stmtContext ctx) { }
+	@Override public void enterEdge_stmt(DOTParser.Edge_stmtContext ctx) {
+		enter("an", "edge statement");
+	}
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitEdge_stmt(DOTParser.Edge_stmtContext ctx) { }
+	@Override public void exitEdge_stmt(DOTParser.Edge_stmtContext ctx) {
+		exit("an", "edge statement");
+	}
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterEdgeRHS(DOTParser.EdgeRHSContext ctx) { }
+	@Override public void enterEdgeRHS(DOTParser.EdgeRHSContext ctx) {
+		}
 	/**
 	 * {@inheritDoc}
 	 *
@@ -129,7 +157,10 @@ public class DOTBaseListener implements DOTListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterEdgeop(DOTParser.EdgeopContext ctx) { }
+	@Override public void enterEdgeop(DOTParser.EdgeopContext ctx) {
+
+
+	}
 	/**
 	 * {@inheritDoc}
 	 *
@@ -141,19 +172,25 @@ public class DOTBaseListener implements DOTListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterNode_stmt(DOTParser.Node_stmtContext ctx) { }
+	@Override public void enterNode_stmt(DOTParser.Node_stmtContext ctx) {
+
+	}
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitNode_stmt(DOTParser.Node_stmtContext ctx) { }
+	@Override public void exitNode_stmt(DOTParser.Node_stmtContext ctx) {
+
+	}
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterNode_id(DOTParser.Node_idContext ctx) { }
+	@Override public void enterNode_id(DOTParser.Node_idContext ctx) {
+
+	}
 	/**
 	 * {@inheritDoc}
 	 *
@@ -165,7 +202,9 @@ public class DOTBaseListener implements DOTListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterPort(DOTParser.PortContext ctx) { }
+	@Override public void enterPort(DOTParser.PortContext ctx) {
+
+	}
 	/**
 	 * {@inheritDoc}
 	 *
@@ -177,25 +216,35 @@ public class DOTBaseListener implements DOTListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterSubgraph(DOTParser.SubgraphContext ctx) { }
+	@Override public void enterSubgraph(DOTParser.SubgraphContext ctx) {
+
+
+		enter("a", "subgraph");
+	}
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitSubgraph(DOTParser.SubgraphContext ctx) { }
+	@Override public void exitSubgraph(DOTParser.SubgraphContext ctx) {
+
+		exit("a", "subgraph");
+	}
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterId(DOTParser.IdContext ctx) { }
+	@Override public void enterId(DOTParser.IdContext ctx) {
+
+	}
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitId(DOTParser.IdContext ctx) { }
+	@Override public void exitId(DOTParser.IdContext ctx) {
+	}
 
 	/**
 	 * {@inheritDoc}
