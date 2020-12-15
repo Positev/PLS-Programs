@@ -29,8 +29,12 @@ stmt_list
    ;
 
 stmt
-   : node_stmt | edge_stmt | attr_stmt | id '=' id | subgraph
+   : node_stmt | edge_stmt | attr_stmt | property | subgraph
    ;
+
+property
+    : id '=' id
+    ;
 
 attr_stmt
    : ( GRAPH | NODE | EDGE ) attr_list
