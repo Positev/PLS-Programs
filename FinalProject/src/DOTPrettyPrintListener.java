@@ -15,7 +15,6 @@ public class DOTPrettyPrintListener extends DOTBaseListener{
         for(int i = 0; i < depth; i++)
             System.out.print(" ");
     }
-    //private void print(String str) { System.out.print(str);}
 
     @Override
     public void enterGraph(DOTParser.GraphContext ctx) {
