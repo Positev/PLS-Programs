@@ -59,9 +59,12 @@ public class DOTBaseListener implements DOTListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void enterStmt(DOTParser.StmtContext ctx) {
+
+		//System.out.println(ctx.children.size());
 		ctx.children.forEach((child)->{
 			if(child.toString().equals("=")){
 				enter("a", "property");
+				return;
 			}
 		});
 	}
@@ -71,9 +74,12 @@ public class DOTBaseListener implements DOTListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitStmt(DOTParser.StmtContext ctx) {
+		//System.out.println(ctx.children.size());
 		ctx.children.forEach((child)->{
+
 			if(child.toString().equals("=")){
 				exit("a", "property");
+				return;
 			}
 		});
 	}
@@ -84,19 +90,30 @@ public class DOTBaseListener implements DOTListener {
 	 */
 	@Override public void enterAttr_stmt(DOTParser.Attr_stmtContext ctx) {
 
+		enter("a", "property");
 	}
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAttr_stmt(DOTParser.Attr_stmtContext ctx) { }
+	@Override public void exitAttr_stmt(DOTParser.Attr_stmtContext ctx) {
+		exit("a", "property");
+		}
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void enterAttr_list(DOTParser.Attr_listContext ctx) {
+		//enter("a", "property");
+	}
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitAttr_list(DOTParser.Attr_listContext ctx) {
 
 	}
 	/**
@@ -104,15 +121,13 @@ public class DOTBaseListener implements DOTListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAttr_list(DOTParser.Attr_listContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterA_list(DOTParser.A_listContext ctx) {
-
-		enter("a", "property");
+		ctx.children.forEach((child)->{
+		if(child.toString().equals("=")){
+			enter("a", "property");
+			exit("a", "property");
+		}
+	});
 	}
 	/**
 	 * {@inheritDoc}
@@ -121,7 +136,6 @@ public class DOTBaseListener implements DOTListener {
 	 */
 	@Override public void exitA_list(DOTParser.A_listContext ctx) {
 
-		exit("a", "property");
 	}
 	/**
 	 * {@inheritDoc}
@@ -141,17 +155,22 @@ public class DOTBaseListener implements DOTListener {
 	}
 	/**
 	 * {@inheritDoc}
-	 *
+
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void enterEdgeRHS(DOTParser.EdgeRHSContext ctx) {
+
+		//enter("a", "property");
 		}
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitEdgeRHS(DOTParser.EdgeRHSContext ctx) { }
+	@Override public void exitEdgeRHS(DOTParser.EdgeRHSContext ctx) {
+
+		//exit("a", "property");
+	}
 	/**
 	 * {@inheritDoc}
 	 *
@@ -174,6 +193,7 @@ public class DOTBaseListener implements DOTListener {
 	 */
 	@Override public void enterNode_stmt(DOTParser.Node_stmtContext ctx) {
 
+		enter("a", "property");
 	}
 	/**
 	 * {@inheritDoc}
@@ -182,6 +202,7 @@ public class DOTBaseListener implements DOTListener {
 	 */
 	@Override public void exitNode_stmt(DOTParser.Node_stmtContext ctx) {
 
+		enter("a", "property");
 	}
 	/**
 	 * {@inheritDoc}
