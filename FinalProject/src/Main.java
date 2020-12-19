@@ -14,16 +14,9 @@ public class Main {
 
         Scanner stdin = new Scanner(System.in);
 
-        while (stdin.hasNextLine()) {
-            String line = stdin.nextLine();
-
-            if (line.equals("\n")  || line.equals("")) {
-                break;
-            } else {
-                dotCode.append(line);
-            }
+        while(stdin.hasNextLine()) {
+            dotCode.append(stdin.nextLine());
         }
-
 
         //Invoke a lexer for lexical anaylasis
         DOTLexer lexer = new DOTLexer(new ANTLRInputStream(dotCode.toString()));
