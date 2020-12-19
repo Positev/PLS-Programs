@@ -50,19 +50,20 @@ public class DOTPrettyPrintListener extends DOTBaseListener{
     public void enterStmt(DOTParser.StmtContext ctx) {
         int start = ctx.getStart().getCharPositionInLine();
         int stop = ctx.getStop().getCharPositionInLine();
+        String source = ctx.getStart().getTokenSource().getInputStream().toString();
         String stmt = ctx.getStart().getTokenSource().getInputStream().toString().substring(start, stop);
+
+
 
         if(stmt.contains("subgraph") || stmt.contains("SUBGRAPH"))
             return;
-        if(stmt.contains("l=")) {
-            stmt = stmt.replaceAll("l=", "l =");
-        }
-        if (stmt.contains(">D")) {
-            stmt = stmt.replaceAll(">D", "> D");
-        }
-        if (stmt.contains("e=")) {
-            stmt = stmt.replaceAll("e=", "e = ");
-        }
+
+        if(stmt.contains("["))
+            stmt = stmt.substring(0, stmt.indexOf("["));
+
+        stmt = stmt.replaceAll("\s*=\s*", " = ");
+
+        stmt = stmt.replaceAll("\s*->\s*", " -> ");
 
 
         printDepth();
@@ -76,21 +77,29 @@ public class DOTPrettyPrintListener extends DOTBaseListener{
     public void exitStmt(DOTParser.StmtContext ctx) {
         int start = ctx.getStart().getCharPositionInLine();
         int stop = ctx.getStop().getCharPositionInLine();
+        String source = ctx.getStart().getTokenSource().getInputStream().toString();
         String stmt = ctx.getStart().getTokenSource().getInputStream().toString().substring(start, stop);
 
-        if(stmt.contains("subgraph") || stmt.contains("SUBGRAPH"))
+
+        if(stmt.toLowerCase().contains("subgraph"))
             return;
 
+//        System.out.println();
+
         for(int i = lastPosition; i < ctx.getStart().getTokenSource().getInputStream().size(); i++) {
-            if (ctx.getStart().getTokenSource().getInputStream().toString().charAt(i) == ';') {
+            lastPosition = i;
+            char ch = ctx.getStart().getTokenSource().getInputStream().toString().charAt(i);
+            boolean validIDChar = (ch >= 65 && ch <= 90) || (ch >= 97 && ch <= 122) || (ch >= 48 && ch <= 57);
+
+            if (ch == ';') {
                 System.out.println(ctx.getStart().getTokenSource().getInputStream().toString().charAt(i));
-                lastPosition = i;
-                break;
+                return;
             }
-            else {
+            else if (validIDChar){
                 System.out.print(ctx.getStart().getTokenSource().getInputStream().toString().charAt(i));
-                lastPosition = i;
             }
+            else
+                return;
         }
     }
 
@@ -116,11 +125,23 @@ public class DOTPrettyPrintListener extends DOTBaseListener{
 
     @Override
     public void enterA_list(DOTParser.A_listContext ctx) {
+        int start = ctx.getStart().getCharPositionInLine();
+        int stop = ctx.getStop().getCharPositionInLine();
+        String stmt = ctx.getStart().getTokenSource().getInputStream().toString().substring(start - 1, stop);
+
+        System.out.print(stmt);
+        lastPosition = stop;
     }
 
     @Override
     public void exitA_list(DOTParser.A_listContext ctx) {
-        
+        int start = lastPosition;
+        String stmt = ctx.getStart().getTokenSource().getInputStream().toString().substring(start);
+        int findSemiColon = stmt.indexOf("]") + 2;
+        stmt = stmt.substring(0, findSemiColon);
+
+        System.out.println(stmt);
+        lastPosition = start + findSemiColon;
     }
 
     @Override
