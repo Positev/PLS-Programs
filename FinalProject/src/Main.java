@@ -7,11 +7,11 @@ import java.io.IOException;
 
 public class Main {
 
-    public static void run(){
+    public static void main(String[] args) throws IOException {
 
 
         StringBuilder dotCode = new StringBuilder();
-/*
+
         Scanner stdin = new Scanner(System.in);
 
         while (stdin.hasNextLine()) {
@@ -22,11 +22,8 @@ public class Main {
             } else {
                 dotCode.append(line);
             }
-        }*/
+        }
 
-        dotCode.append("digraph trees {rankdir=LR;subgraph t {0 -> \"1\" [label = \"A\"];0 -> \"2\" [label\n" +
-                "= \"B\"];}SUBGRAPH u {Animal -> Cat [label = \"feline\", shape=\"record\"];Animal ->\n" +
-                "Dog1 [label = \"canine\"];}}");
 
         //Invoke a lexer for lexical anaylasis
         DOTLexer lexer = new DOTLexer(new ANTLRInputStream(dotCode.toString()));
@@ -53,9 +50,7 @@ public class Main {
         //Create a listener for pretty print
         DOTPrettyPrintListener prettyListener = new DOTPrettyPrintListener();
         //Walk the tree by attaching the listener to the walker
-//         walker.walk(prettyListener, tree);
-    }
-    public static void main(String[] args) throws IOException {
-        run();
+         walker.walk(prettyListener, tree);
+
     }
 }

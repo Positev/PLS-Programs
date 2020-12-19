@@ -141,7 +141,7 @@ public class DOTPrettyPrintListener extends DOTBaseListener{
         stmt = stmt.substring(0, findSemiColon);
 
         System.out.println(stmt);
-        lastPosition = start + findSemiColon;
+        lastPosition = start + findSemiColon - 2;
     }
 
     @Override
